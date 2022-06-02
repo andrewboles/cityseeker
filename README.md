@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# FlickFlock
 
-## Getting Started
+This is FlickFlck, a Full Stack Next.js + Node/Express Video-centric social media app complete with:
 
-First, run the development server:
+- Authentication and OAuth2 social login via passport.js
+- Optimistic UI updates via React Query
+- Server-side rendering
+- CRUD operations on posts, post comments, post likes, and comment likes.
+- Followers/Followings
+- Client-side video uploading is handled via AWS SDK, and stored on Wasabi
+- Built with: Next.js, React, Node.js, Express, Prisma, & MongoDB
+- Hosted on Vercel (backend running using serverless functions)
+
+## Live Demo
+
+[Live Demo is available here](https://flickflock.xyz)
+
+## Run on Your Environment
+
+To run FlickFlock's frontend on your own environment:
 
 ```bash
+cd into frontend-flickflock_nextjs-reactquery
+
+npm install
+# or
+yarn install
+
+touch .env.local
+add NEXT_PUBLIC_BACKEND_URL="https://api.flickflock.xyz" to .env.local
+
 npm run dev
 # or
 yarn dev
+
 ```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the app. You'l be able to do everything but upload new posts.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Repo Info
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+This is a new, consolidated repository for the entire project. The previous repos have been set to private and each (1 frontend, 1 backend) had over 75 commits from Feb 2022 - Jun 2022
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## About Me
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+My name's Andrew Boles, and I'm an Automotive Engineer and self-taught full stack web developer. More about me here: [andrewboles.com](https://andrewboles.com)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
