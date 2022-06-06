@@ -6,11 +6,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        'eggwhite': '#e6dfcd',
+        'cobalt': '#35498b',
+        'stone-blue': '#23292f',
         'ash': '#e0e1da',
-        'eggwhite': '#f3f3ee',
-        'dust': '#e5b494',
-        'hot-clay': '#e70c5b',
-        'soil': '#57201f'
+        'moss': '#8A8936',
 
       }
     },
