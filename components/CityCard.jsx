@@ -5,7 +5,7 @@ export default function CityCard({ results }) {
         
     }
     return (
-        <div className="flex flex-col items-start bg-ash rounded-xl p-8 dark:bg-slate-800 m-10 shadow-xl w-1/2 h-5/6">
+        <div className="flex flex-col items-start bg-ash rounded-xl p-8 dark:bg-slate-800 m-10 shadow-xl w-1/2">
             <h2 className="text-xl font-semibold text-stone-blue">{results.city}</h2>
             <div className="flex flex-col items-center justify-center bg-ash w-full flex-grow" >
                 <StatItem title="Current Temp" value={results.currentTemp} />
