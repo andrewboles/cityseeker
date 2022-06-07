@@ -22,7 +22,10 @@ export default function Home() {
       </video>
       <div className="flex items-center justify-center h-screen">
         {forecastResults ? (
-          <CityCard results={forecastResults[0]} />
+          <>
+            <CityCard results={forecastResults} setForecastResults={setForecastResults} />
+          </>
+
         ) : (
           <SearchCard {...{ setForecastResults }} />
         )}
