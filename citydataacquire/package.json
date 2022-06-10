@@ -1,0 +1,10 @@
+{
+  "name": "citydataacquire",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "<andrewboles@me.com>",
+  "license": "none",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
