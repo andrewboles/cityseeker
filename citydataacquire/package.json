@@ -5,6 +5,7 @@
   "author": "<andrewboles@me.com>",
   "license": "none",
   "dependencies": {
-    "axios": "^0.27.2"
+    "axios": "^0.27.2",
+    "fs": "^0.0.1-security"
   }
 }

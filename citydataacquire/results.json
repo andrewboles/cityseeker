@@ -1,0 +1,1265 @@
+{
+  "New York, New York": {
+    "report-card": {
+      "Overall Niche Grade": {
+        "description": "Based on school quality, crime rates, cost of living, employment, and things to do in the area.",
+        "value": 4
+      },
+      "Public Schools": {
+        "description": "Based on statistics, student and parent reviews, and expert insights.",
+        "value": 3.33
+      },
+      "Crime & Safety": {
+        "description": "Based on violent and property crime rates.",
+        "value": 2
+      },
+      "Housing": {
+        "description": "Based on home values, property taxes, housing costs, local schools, and more.",
+        "value": 1.33
+      },
+      "Nightlife": {
+        "description": "Based on access to bars, restaurants, theaters, and other attractions. ",
+        "value": 4.33
+      },
+      "Good for Families": {
+        "description": "Based on school quality, safety, and family-friendly living.",
+        "value": 3.66
+      },
+      "Diversity": {
+        "description": "Based on ethnic and economic diversity. ",
+        "value": 4.33
+      },
+      "Jobs": {
+        "description": "Based on employment rates, job and business growth, and cost of living.",
+        "value": 2.33
+      },
+      "Weather": {
+        "description": "Based on number of sunny days, precipitation, and average temperatures.",
+        "value": 2.66
+      },
+      "Cost of Living": {
+        "description": "Based on the consumer price index and access to affordable housing. ",
+        "value": 1.66
+      },
+      "Health & Fitness": {
+        "description": "Based on community health statistics and access to healthcare.",
+        "value": 4
+      },
+      "Outdoor Activities": {
+        "description": "Based on weather, air quality, and access to parks and other recreational opportunities.",
+        "value": 4.33
+      },
+      "Commute": {
+        "description": "Based on typical commute time and method.",
+        "value": 3.66
+      }
+    },
+    "about": {
+      "Population": {
+        "value": 8419316
+      }
+    },
+    "real-estate": {
+      "Median Home Value": {
+        "value": 606000,
+        "national": 217500
+      },
+      "Median Rent": {
+        "value": 1443,
+        "national": 1062
+      },
+      "Area Feel": {
+        "value": "Dense Urban"
+      },
+      "Rent vs. Own": {
+        "value": {
+          "Own": "0.32669",
+          "Rent": "0.67331"
+        }
+      }
+    },
+    "rankings": {
+      "Best Cities for Outdoor Activities in America": {
+        "value": 3,
+        "total": 228
+      },
+      "Most Diverse Cities in America": {
+        "value": 4,
+        "total": 228
+      },
+      "Best Cities for Young Professionals in America": {
+        "value": 9,
+        "total": 228
+      }
+    },
+    "schools": {
+      "Public Schools": {
+        "Stuyvesant High School": {
+          "location": "NEW YORK, NY",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.09,
+            "count": 1088
+          }
+        },
+        "Bronx High School of Science": {
+          "location": "BRONX, NY",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 3.86,
+            "count": 992
+          }
+        },
+        "Staten Island Technical High School": {
+          "location": "STATEN ISLAND, NY",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.34,
+            "count": 744
+          }
+        },
+        "Townsend Harris High School": {
+          "location": "FLUSHING, NY",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.19,
+            "count": 655
+          }
+        },
+        "Great Neck South High School": {
+          "location": "GREAT NECK, NY",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.18,
+            "count": 260
+          }
+        }
+      },
+      "Private Schools": {
+        "Trinity School": {
+          "location": "NEW YORK, NY",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 3.99,
+            "count": 74
+          }
+        },
+        "The Brearley School": {
+          "location": "NEW YORK, NY",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.24,
+            "count": 76
+          }
+        },
+        "Riverdale Country School": {
+          "location": "BRONX, NY",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.35,
+            "count": 62
+          }
+        },
+        "Horace Mann School": {
+          "location": "BRONX, NY",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.32,
+            "count": 145
+          }
+        },
+        "Regis High School": {
+          "location": "NEW YORK, NY",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.43,
+            "count": 140
+          }
+        }
+      }
+    },
+    "neighborhoods": {
+      "Chelsea": {
+        "location": "Neighborhood in New York City, NY",
+        "grades": {
+          "Overall Niche Grade": {
+            "value": 4.33
+          },
+          "Public Schools": {
+            "value": 3.33
+          }
+        },
+        "review": {
+          "average": 4.012658227848101,
+          "count": 79
+        }
+      },
+      "Hell's Kitchen": {
+        "location": "Neighborhood in New York City, NY",
+        "grades": {
+          "Overall Niche Grade": {
+            "value": 4.33
+          },
+          "Public Schools": {
+            "value": 3.33
+          }
+        },
+        "review": {
+          "average": 3.9836065573770494,
+          "count": 61
+        }
+      },
+      "Battery Park City": {
+        "location": "Neighborhood in New York City, NY",
+        "grades": {
+          "Overall Niche Grade": {
+            "value": 4.33
+          },
+          "Public Schools": {
+            "value": 3.33
+          }
+        },
+        "review": {
+          "average": 4.8,
+          "count": 10
+        }
+      },
+      "Murray Hill": {
+        "location": "Neighborhood in New York City, NY",
+        "grades": {
+          "Overall Niche Grade": {
+            "value": 4.33
+          },
+          "Public Schools": {
+            "value": 3.33
+          }
+        },
+        "review": {
+          "average": 4,
+          "count": 13
+        }
+      },
+      "Greenwich Village": {
+        "location": "Neighborhood in New York City, NY",
+        "grades": {
+          "Overall Niche Grade": {
+            "value": 4.33
+          },
+          "Public Schools": {
+            "value": 3.33
+          }
+        },
+        "review": {
+          "average": 4.4375,
+          "count": 16
+        }
+      }
+    },
+    "crime-safety": {
+      "Violent Crimes": {
+        "Assault": {
+          "value": 386.2,
+          "national": 282.69
+        },
+        "Murder": {
+          "value": 5.64,
+          "national": 6.08
+        },
+        "Rape": {
+          "value": 27.14,
+          "national": 40.68
+        },
+        "Robbery": {
+          "value": 158.81,
+          "national": 135.53
+        }
+      },
+      "Property Crimes": {
+        "Burglary": {
+          "value": 167.55,
+          "national": 500.13
+        },
+        "Theft": {
+          "value": 1279.41,
+          "national": 2042.79
+        },
+        "Motor Vehicle Theft": {
+          "value": 111.54,
+          "national": 284.04
+        }
+      }
+    },
+    "residents": {
+      "Age": {
+        "10-17 years": 0.09,
+        "18-24 years": 0.09,
+        "25-34 years": 0.18,
+        "35-44 years": 0.14,
+        "45-54 years": 0.13,
+        "55-64 years": 0.12,
+        "65+ years": 0.15,
+        "<10 years": 0.12
+      },
+      "Education Levels": {
+        "Bachelor's degree": {
+          "value": 0.22,
+          "national": 0.2
+        },
+        "High school diploma or equivalent": {
+          "value": 0.24,
+          "national": 0.27
+        },
+        "Less than high school diploma": {
+          "value": 0.18,
+          "national": 0.12
+        },
+        "Master's degree or higher": {
+          "value": 0.16,
+          "national": 0.12
+        },
+        "Some college or associate's degree": {
+          "value": 0.2,
+          "national": 0.29
+        }
+      }
+    },
+    "working-in": {
+      "Median Household Income": {
+        "value": 63998,
+        "national": 62843
+      },
+      "workplaces": {
+        "JPMorgan Chase & Co.": {
+          "review": {
+            "average": 4.23,
+            "count": 180
+          }
+        },
+        "NYU Hospitals Center": {
+          "review": {
+            "average": 4.52,
+            "count": 21
+          }
+        },
+        "NewYork-Presbyterian Hospital": {
+          "review": {
+            "average": 4.52,
+            "count": 23
+          }
+        }
+      }
+    },
+    "reviews": {
+      "reviews": [
+        {
+          "body": "New York City occupies a special place in the American consciousness as the tumultuous seat of our financial markets and the buzzing capital of our culture. New York is celebrated for its wealth of nationalities, ethnicities and languages. But why would anyone want to live in NYC? It's insanely expensive, there are too many crazy people, it's bundles of energy and famously, \"If you can make it in New York, you can make it anywhere.\" And lots of people love the challenge! Most important, it’s the city that exemplifies American pluralism, the “melting pot” that attracts new immigrants looking for work and college graduates drawn from their hometowns by the promise of excitement and opportunity. Its appeal hangs on its image as a city where everyone can try, get, and be anything. It has been my home for more than 40 years and I love it for its social and economic freedoms. My education and computer technology background fit right in and I found great career and social successes.",
+          "created": "2022-01-30T16:34:05.807109Z",
+          "rating": 4
+        },
+        {
+          "body": "For the most part, New York City is an incredible place to live when you're young and single. It's exciting, upbeat, and there's always something happening. If you're an on the go kind of person, the city is the place for you! However, there are definitely downfalls about living there. For one, everything is HARDER living in such an urban environment. Getting places, grocery shopping, regular household stuff such as doing laundry (if you're building doesn't have a laundry machine), maintenance issues, etc. It's also crazy expensive. But honestly, where I'm at in my life right now, I wouldn't trade living there for the world.",
+          "created": "2021-12-26T23:06:41.86817Z",
+          "rating": 4
+        },
+        {
+          "body": "My experience with New York City as being a Brooklyn born native changed over the course of my 22 years of living while I was there. What I definitely like about this city is the amount of opportunities and lack of scarcity of anything. There is almost an abundance of everything you can imagine! As I grew older I began to relize that the main thing I do not like or appreciate about this city, is the cost of living. This ties into businesses, businesses owners, company executives, because a lot of the higher ranked individuals who want to make more money, make it harder each year for individuals like myself who try to make way for themseleves for a better life. I see a lot of people using other people to their advantages in order to gain some benefit from one another. I do not like the fact that it is such a steep and treacherous uphill battle for individuals who were not born with a lot and who have to really battle for their path of life. Rich get richer, poor must not give up!",
+          "created": "2021-10-01T07:51:06.169298Z",
+          "rating": 3
+        }
+      ],
+      "stars": {
+        "count": 1591,
+        "value": 4.29
+      },
+      "ratings": {
+        "1": 18,
+        "2": 17,
+        "3": 199,
+        "4": 606,
+        "5": 751
+      }
+    }
+  },
+  "Los Angeles, California": {
+    "report-card": {
+      "Overall Niche Grade": {
+        "description": "Based on school quality, crime rates, cost of living, employment, and things to do in the area.",
+        "value": 3.33
+      },
+      "Public Schools": {
+        "description": "Based on statistics, student and parent reviews, and expert insights.",
+        "value": 3
+      },
+      "Crime & Safety": {
+        "description": "Based on violent and property crime rates.",
+        "value": 2
+      },
+      "Housing": {
+        "description": "Based on home values, property taxes, housing costs, local schools, and more.",
+        "value": 0.66
+      },
+      "Nightlife": {
+        "description": "Based on access to bars, restaurants, theaters, and other attractions. ",
+        "value": 4.33
+      },
+      "Good for Families": {
+        "description": "Based on school quality, safety, and family-friendly living.",
+        "value": 3
+      },
+      "Diversity": {
+        "description": "Based on ethnic and economic diversity. ",
+        "value": 4.33
+      },
+      "Jobs": {
+        "description": "Based on employment rates, job and business growth, and cost of living.",
+        "value": 2
+      },
+      "Weather": {
+        "description": "Based on number of sunny days, precipitation, and average temperatures.",
+        "value": 4.33
+      },
+      "Cost of Living": {
+        "description": "Based on the consumer price index and access to affordable housing. ",
+        "value": 1
+      },
+      "Health & Fitness": {
+        "description": "Based on community health statistics and access to healthcare.",
+        "value": 4
+      },
+      "Outdoor Activities": {
+        "description": "Based on weather, air quality, and access to parks and other recreational opportunities.",
+        "value": 4.33
+      },
+      "Commute": {
+        "description": "Based on typical commute time and method.",
+        "value": 3.33
+      }
+    },
+    "about": {
+      "Population": {
+        "value": 3966936
+      }
+    },
+    "real-estate": {
+      "Median Home Value": {
+        "value": 636900,
+        "national": 217500
+      },
+      "Median Rent": {
+        "value": 1450,
+        "national": 1062
+      },
+      "Area Feel": {
+        "value": "Urban"
+      },
+      "Rent vs. Own": {
+        "value": {
+          "Own": "0.36817",
+          "Rent": "0.63183"
+        }
+      }
+    },
+    "rankings": {
+      "Best Cities for Outdoor Activities in America": {
+        "value": 2,
+        "total": 228
+      },
+      "Healthiest Cities in America": {
+        "value": 27,
+        "total": 228
+      },
+      "Healthiest Places to Live in America": {
+        "value": 27,
+        "total": 228
+      }
+    },
+    "schools": {
+      "Public Schools": {
+        "Granada Hills Charter": {
+          "location": "GRANADA HILLS, CA",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.05,
+            "count": 1445
+          }
+        },
+        "High Tech Los Angeles": {
+          "location": "LAKE BALBOA, CA",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.28,
+            "count": 174
+          }
+        },
+        "Los Angeles Center for Enriched Studies": {
+          "location": "LOS ANGELES, CA",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 3.61,
+            "count": 437
+          }
+        },
+        "Harbor Teacher Preparation Academy": {
+          "location": "WILMINGTON, CA",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 3.76,
+            "count": 277
+          }
+        },
+        "Palisades Charter High School": {
+          "location": "PACIFIC PALISADES, CA",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 3.91,
+            "count": 672
+          }
+        }
+      },
+      "Private Schools": {
+        "Harvard-Westlake School": {
+          "location": "LOS ANGELES, CA",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.45,
+            "count": 155
+          }
+        },
+        "Flintridge Preparatory School": {
+          "location": "LA CANADA FLINTRIDGE, CA",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.66,
+            "count": 103
+          }
+        },
+        "Polytechnic School": {
+          "location": "PASADENA, CA",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.2,
+            "count": 105
+          }
+        },
+        "Westridge School": {
+          "location": "PASADENA, CA",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.38,
+            "count": 126
+          }
+        },
+        "Windward School": {
+          "location": "LOS ANGELES, CA",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.51,
+            "count": 78
+          }
+        }
+      }
+    },
+    "neighborhoods": {
+      "Westwood": {
+        "location": "Neighborhood in Los Angeles, CA",
+        "grades": {
+          "Overall Niche Grade": {
+            "value": 4
+          },
+          "Public Schools": {
+            "value": 3
+          }
+        },
+        "review": {
+          "average": 4.236363636363636,
+          "count": 55
+        }
+      },
+      "Beverlywood": {
+        "location": "Neighborhood in Los Angeles, CA",
+        "grades": {
+          "Overall Niche Grade": {
+            "value": 4
+          },
+          "Public Schools": {
+            "value": 3
+          }
+        },
+        "review": {
+          "average": 4.428571428571429,
+          "count": 7
+        }
+      },
+      "West Los Angeles": {
+        "location": "Neighborhood in Los Angeles, CA",
+        "grades": {
+          "Overall Niche Grade": {
+            "value": 4
+          },
+          "Public Schools": {
+            "value": 2.66
+          }
+        },
+        "review": {
+          "average": 4.269230769230769,
+          "count": 26
+        }
+      },
+      "Century City": {
+        "location": "Neighborhood in Los Angeles, CA",
+        "grades": {
+          "Overall Niche Grade": {
+            "value": 4
+          },
+          "Public Schools": {
+            "value": 3
+          }
+        },
+        "review": {
+          "average": 4.75,
+          "count": 4
+        }
+      },
+      "Palms": {
+        "location": "Neighborhood in Los Angeles, CA",
+        "grades": {
+          "Overall Niche Grade": {
+            "value": 4
+          },
+          "Public Schools": {
+            "value": 3.33
+          }
+        },
+        "review": {
+          "average": 4.076923076923077,
+          "count": 13
+        }
+      }
+    },
+    "crime-safety": {
+      "Violent Crimes": {
+        "Assault": {
+          "value": 463.31,
+          "national": 282.69
+        },
+        "Murder": {
+          "value": 8.77,
+          "national": 6.08
+        },
+        "Rape": {
+          "value": 49.57,
+          "national": 40.68
+        },
+        "Robbery": {
+          "value": 200.3,
+          "national": 135.53
+        }
+      },
+      "Property Crimes": {
+        "Burglary": {
+          "value": 344.27,
+          "national": 500.13
+        },
+        "Theft": {
+          "value": 1274.56,
+          "national": 2042.79
+        },
+        "Motor Vehicle Theft": {
+          "value": 529.15,
+          "national": 284.04
+        }
+      }
+    },
+    "residents": {
+      "Age": {
+        "10-17 years": 0.09,
+        "18-24 years": 0.1,
+        "25-34 years": 0.18,
+        "35-44 years": 0.14,
+        "45-54 years": 0.13,
+        "55-64 years": 0.11,
+        "65+ years": 0.12,
+        "<10 years": 0.12
+      },
+      "Education Levels": {
+        "Bachelor's degree": {
+          "value": 0.23,
+          "national": 0.2
+        },
+        "High school diploma or equivalent": {
+          "value": 0.19,
+          "national": 0.27
+        },
+        "Less than high school diploma": {
+          "value": 0.23,
+          "national": 0.12
+        },
+        "Master's degree or higher": {
+          "value": 0.12,
+          "national": 0.12
+        },
+        "Some college or associate's degree": {
+          "value": 0.24,
+          "national": 0.29
+        }
+      }
+    },
+    "working-in": {
+      "Median Household Income": {
+        "value": 62142,
+        "national": 62843
+      },
+      "workplaces": {
+        "Farmers Insurance Group": {
+          "review": {
+            "average": 4.6,
+            "count": 35
+          }
+        },
+        "Ronald Reagan UCLA Medical Center": {
+          "review": {
+            "average": 4.41,
+            "count": 32
+          }
+        },
+        "The Coffee Bean & Tea Leaf": {
+          "review": {
+            "average": 4.32,
+            "count": 22
+          }
+        }
+      }
+    },
+    "reviews": {
+      "reviews": [
+        {
+          "body": "LA has something for everyone - concerts, theme parks, regular parks, restaurant, night life, sports and all those venues that go with them! If I could change any one thing about LA, it would be the addition of viable and comprehensive public transit - it really pales in comparison to other cities of a similar size, like New York City or London. Another thing to consider is the weather. Most people love LA for its mild climate. Personally, I'm a fan of changing weather and seasons - having grown up in the midwest, it's something that I really miss about home. So if you like a variety from day to day (and also like to wear a variety of outfits), then Los Angeles may not be the place for you. However, even for someone like me who really hates the never-changing weather, there are still so many opportunities here - from jobs to recreation - that the cons are widely outshone by the pros.",
+          "created": "2022-03-31T06:05:29.02355Z",
+          "rating": 5
+        },
+        {
+          "body": "There are many things I love about Los Angeles. The number one thing that comes to mind is the diversity. You can find any ethnic town you could think of; from Chinatown to Olvera street, Thai Town and Little Armenia, you will be encompassed by the culture and don't even get me started on the amazing authentic food! Nothing beats the diversity that comes with Los Angeles. Aside from this there is so much opportunity here. Born and raised in Sacramento, I didn't know how interesting life could really be. Dreams do come true in Los Angeles as long as you have the right attitude. As with everything else though, there are some major problems here. The homeless community in LA is the hardest part. Skid Row is notoriously known for it's homeless community, the area's hardship's date back to the 1880's. If I could help to change one thing about LA, it would be this.",
+          "created": "2021-11-30T18:10:25.6855Z",
+          "rating": 3
+        },
+        {
+          "body": "Life is beautiful in LA. Weather is great and people are nice. But, the poor people, the homeless people, say people are kind of hearbreaking and kill the city vibe. Sometimes, it's hard to see both the wealth of certain people and the dying one in the street. As an International student, it's hard to cope with such a gap. I was told it was inevitable to have a car in LA, I personally think it's not true. I've been using public transportation since I've arrived and I'm pretty much satisfied with it! I like living in LA, even if many things have to be improved.",
+          "created": "2022-04-23T15:19:39.338651Z",
+          "rating": 3
+        }
+      ],
+      "stars": {
+        "count": 1624,
+        "value": 4.06
+      },
+      "ratings": {
+        "1": 14,
+        "2": 46,
+        "3": 343,
+        "4": 649,
+        "5": 572
+      }
+    }
+  },
+  "Chicago, Illinois": {
+    "report-card": {
+      "Overall Niche Grade": {
+        "description": "Based on school quality, crime rates, cost of living, employment, and things to do in the area.",
+        "value": 3.66
+      },
+      "Public Schools": {
+        "description": "Based on statistics, student and parent reviews, and expert insights.",
+        "value": 2.66
+      },
+      "Crime & Safety": {
+        "description": "Based on violent and property crime rates.",
+        "value": 1.66
+      },
+      "Housing": {
+        "description": "Based on home values, property taxes, housing costs, local schools, and more.",
+        "value": 1.66
+      },
+      "Nightlife": {
+        "description": "Based on access to bars, restaurants, theaters, and other attractions. ",
+        "value": 4.33
+      },
+      "Good for Families": {
+        "description": "Based on school quality, safety, and family-friendly living.",
+        "value": 3.33
+      },
+      "Diversity": {
+        "description": "Based on ethnic and economic diversity. ",
+        "value": 4.33
+      },
+      "Jobs": {
+        "description": "Based on employment rates, job and business growth, and cost of living.",
+        "value": 2.33
+      },
+      "Weather": {
+        "description": "Based on number of sunny days, precipitation, and average temperatures.",
+        "value": 2.33
+      },
+      "Cost of Living": {
+        "description": "Based on the consumer price index and access to affordable housing. ",
+        "value": 2.33
+      },
+      "Health & Fitness": {
+        "description": "Based on community health statistics and access to healthcare.",
+        "value": 3.66
+      },
+      "Outdoor Activities": {
+        "description": "Based on weather, air quality, and access to parks and other recreational opportunities.",
+        "value": 4
+      },
+      "Commute": {
+        "description": "Based on typical commute time and method.",
+        "value": 3.66
+      }
+    },
+    "about": {
+      "Population": {
+        "value": 2709534
+      }
+    },
+    "real-estate": {
+      "Median Home Value": {
+        "value": 258000,
+        "national": 217500
+      },
+      "Median Rent": {
+        "value": 1112,
+        "national": 1062
+      },
+      "Area Feel": {
+        "value": "Urban"
+      },
+      "Rent vs. Own": {
+        "value": {
+          "Own": "0.44993",
+          "Rent": "0.55007"
+        }
+      }
+    },
+    "rankings": {
+      "Most Diverse Cities in America": {
+        "value": 9,
+        "total": 228
+      },
+      "Best Cities for Young Professionals in America": {
+        "value": 20,
+        "total": 228
+      },
+      "Best Cities for Outdoor Activities in America": {
+        "value": 42,
+        "total": 228
+      }
+    },
+    "schools": {
+      "Public Schools": {
+        "Payton College Preparatory High School": {
+          "location": "CHICAGO, IL",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.09,
+            "count": 402
+          }
+        },
+        "Northside College Preparatory High School": {
+          "location": "CHICAGO, IL",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.04,
+            "count": 594
+          }
+        },
+        "Whitney M. Young Magnet High School": {
+          "location": "CHICAGO, IL",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.15,
+            "count": 1137
+          }
+        },
+        "Jones College Prep High School": {
+          "location": "CHICAGO, IL",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 3.94,
+            "count": 711
+          }
+        },
+        "Lane Tech College Prep High School": {
+          "location": "CHICAGO, IL",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.19,
+            "count": 3139
+          }
+        }
+      },
+      "Private Schools": {
+        "University of Chicago Laboratory Schools": {
+          "location": "CHICAGO, IL",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 3.94,
+            "count": 131
+          }
+        },
+        "Latin School of Chicago": {
+          "location": "CHICAGO, IL",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.02,
+            "count": 112
+          }
+        },
+        "North Shore Country Day": {
+          "location": "WINNETKA, IL",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.35,
+            "count": 69
+          }
+        },
+        "British International School of Chicago, South Loop": {
+          "location": "CHICAGO, IL",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.73,
+            "count": 51
+          }
+        },
+        "Roycemore School": {
+          "location": "EVANSTON, IL",
+          "grades": {
+            "Overall Niche Grade": {
+              "value": 4.33
+            }
+          },
+          "review": {
+            "average": 4.62,
+            "count": 149
+          }
+        }
+      }
+    },
+    "neighborhoods": {
+      "Printers Row": {
+        "location": "Neighborhood in Chicago, IL",
+        "grades": {
+          "Overall Niche Grade": {
+            "value": 4.33
+          },
+          "Public Schools": {
+            "value": 2.66
+          }
+        },
+        "review": {
+          "average": 5,
+          "count": 10
+        }
+      },
+      "Greektown": {
+        "location": "Neighborhood in Chicago, IL",
+        "grades": {
+          "Overall Niche Grade": {
+            "value": 4.33
+          },
+          "Public Schools": {
+            "value": 2.66
+          }
+        },
+        "review": {
+          "average": 0,
+          "count": 0
+        }
+      },
+      "West Loop": {
+        "location": "Neighborhood in Chicago, IL",
+        "grades": {
+          "Overall Niche Grade": {
+            "value": 4.33
+          },
+          "Public Schools": {
+            "value": 2.66
+          }
+        },
+        "review": {
+          "average": 4.769230769230769,
+          "count": 13
+        }
+      },
+      "River North": {
+        "location": "Neighborhood in Chicago, IL",
+        "grades": {
+          "Overall Niche Grade": {
+            "value": 4.33
+          },
+          "Public Schools": {
+            "value": 2.66
+          }
+        },
+        "review": {
+          "average": 3.742857142857143,
+          "count": 35
+        }
+      },
+      "Loop": {
+        "location": "Neighborhood in Chicago, IL",
+        "grades": {
+          "Overall Niche Grade": {
+            "value": 4.33
+          },
+          "Public Schools": {
+            "value": 2.66
+          }
+        },
+        "review": {
+          "average": 3.7758620689655173,
+          "count": 58
+        }
+      }
+    },
+    "crime-safety": {
+      "Violent Crimes": {
+        "Assault": {
+          "value": 616.16,
+          "national": 282.69
+        },
+        "Murder": {
+          "value": 28.62,
+          "national": 6.08
+        },
+        "Rape": {
+          "value": 49.97,
+          "national": 40.68
+        },
+        "Robbery": {
+          "value": 292.14,
+          "national": 135.53
+        }
+      },
+      "Property Crimes": {
+        "Burglary": {
+          "value": 320.87,
+          "national": 500.13
+        },
+        "Theft": {
+          "value": 2293.37,
+          "national": 2042.79
+        },
+        "Motor Vehicle Theft": {
+          "value": 373.22,
+          "national": 284.04
+        }
+      }
+    },
+    "residents": {
+      "Age": {
+        "10-17 years": 0.09,
+        "18-24 years": 0.1,
+        "25-34 years": 0.2,
+        "35-44 years": 0.14,
+        "45-54 years": 0.12,
+        "55-64 years": 0.11,
+        "65+ years": 0.12,
+        "<10 years": 0.12
+      },
+      "Education Levels": {
+        "Bachelor's degree": {
+          "value": 0.23,
+          "national": 0.2
+        },
+        "High school diploma or equivalent": {
+          "value": 0.23,
+          "national": 0.27
+        },
+        "Less than high school diploma": {
+          "value": 0.15,
+          "national": 0.12
+        },
+        "Master's degree or higher": {
+          "value": 0.16,
+          "national": 0.12
+        },
+        "Some college or associate's degree": {
+          "value": 0.23,
+          "national": 0.29
+        }
+      }
+    },
+    "working-in": {
+      "Median Household Income": {
+        "value": 58247,
+        "national": 62843
+      },
+      "workplaces": {
+        "YMCA": {
+          "review": {
+            "average": 4.25,
+            "count": 282
+          }
+        },
+        "Hyatt Hotels": {
+          "review": {
+            "average": 4.45,
+            "count": 38
+          }
+        },
+        "Rush University Medical Center": {
+          "review": {
+            "average": 4.55,
+            "count": 22
+          }
+        }
+      }
+    },
+    "reviews": {
+      "reviews": [
+        {
+          "body": "Certainly, people tend to perceive Chicago poorly due to its infamous crime rate. However, Chicago is so much for than that and has a lot to offer. There are hundreds of things to do. For example, if you want to do touristy activities, you can go to the bean, Grant Park, John Hancock Center, and Navy Pier. However, if you want a more local experience, you can go to Millennium Park and watch a movie outdoors with the rest of the city, go to Chinatown and explore different Chinese dishes, visit Little Village and get an authentic Mexican American experience. People tend to be generally kind and respectful to one another. The city is among one of the cleanest in the United States! We have one of the best public transportation systems and one of the largest public school systems in the United States. Additionally, there are four distinct seasons that each offer unique experiences.",
+          "created": "2022-05-18T13:32:52.585725Z",
+          "rating": 4
+        },
+        {
+          "body": "Chicago is an incredible city that I've been lucky to call home for over 5 years. Incredibly diverse with rich culture in every neighborhood, the windy city has something to offer everyone. As a queer person, I feel incredibly safe here and am surrounded by community. The CTA, our public transit system, and the city's bike-friendliness have allowed me to happily, easily live here without a car. The winter's are tough, but the summers are worth it!",
+          "created": "2022-01-07T02:40:34.2405Z",
+          "rating": 5
+        },
+        {
+          "body": "Living in Chicago hasn’t been easy, but I love it here. I love the architecture and food. I love the summer time. Everyone is family oriented. The city love is amazing. My experience with Chicago has been both good and bad. There is a lot of violence and injustice that comes with living here. I love the beautiful view and skyline. I love The Bean and Navy Pier. Chicago is indeed ready for a change. I feel as though everyone as a whole and community should come together to support each other and have a positive attitude.You can go to the lakefront. Chicago has Lake Michigan with it’s numerous beaches and parks. Chicago is unique and diverse. Chicago food is a must! Chicago is known for some of the best restaurants. The pizza is thick, the hot dogs are unmatched, and there's this food called Italian beef. Chicago has multiple places you can visit and cite see.  Overall, Chicago is indeed a loving place. We just have to progress and work towards change in some aspects. -Thank you!",
+          "created": "2021-03-11T18:19:02.953926Z",
+          "rating": 4
+        }
+      ],
+      "stars": {
+        "count": 2574,
+        "value": 4.17
+      },
+      "ratings": {
+        "1": 28,
+        "2": 60,
+        "3": 461,
+        "4": 924,
+        "5": 1101
+      }
+    }
+  }
+}
