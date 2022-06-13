@@ -51,11 +51,13 @@ export default function Home() {
     commuteScore: 3,
   });
   return (
-          <div className="flex flex-col justify-center items-center h-screen w-screen">
-            <RankingList {...{ preferences }} />
-            <SliderSet {...{ preferences, setPreferences }} />
-            {/* <SearchCard {...{ setForecastResults }} /> */}
-          </div>
+    <div className="flex flex-col justify-center items-center h-screen w-screen">
+      <RankingList {...{ preferences }} />
+      <div className="flex flex-col lg:flex-row  w-screen lg:h-1/2 justify-center">
+        <SliderSet {...{ preferences, setPreferences }} />
+        <SearchCard {...{ setForecastResults }} />
+      </div>
+    </div>
   );
 }
 
@@ -81,10 +83,10 @@ const SearchCard = ({ setForecastResults }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col items-center bg-ash rounded-xl p-8 dark:bg-slate-800 m-10 shadow-xl w-3/4 md:w-1/3"
+      className="lg:flex flex-col items-center bg-ash rounded-xl p-8 dark:bg-slate-800 m-10 shadow-xl w-3/4 md:w-1/3 hidden"
     >
       <Select
-        className=" w-full mb-3"
+        className=" w-1/4 mb-3"
         onChange={(e) =>
           setSearchCities({ ...searchCities, city1: e?.value || "" })
         }
@@ -117,10 +119,10 @@ const SearchCard = ({ setForecastResults }) => {
 const SliderSet = ({ preferences, setPreferences }) => {
   const populationMarks = [
     { value: 0, label: "0" },
-    { value: 25, label: "250000" },
-    { value: 50, label: "500000" },
-    { value: 75, label: "750000" },
-    { value: 100, label: "1000000" },
+    { value: 25, label: "250k" },
+    { value: 50, label: "500k" },
+    { value: 75, label: "750k" },
+    { value: 100, label: "1M" },
   ];
 
   const generalMarks = [
@@ -133,19 +135,19 @@ const SliderSet = ({ preferences, setPreferences }) => {
   ];
 
   return (
-    <div className="flex flex-col flex-wrap w-2/3 h-1/2 justify-center items-center shadow-md sm:rounded-lg m-10">
-        <PreferenceSlider step={25} categoryHeading="Minimum City Population" preferences={preferences} category="population" MARKS={populationMarks} setPreferences={setPreferences}/>
-        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Cost of Living" preferences={preferences} category="costOfLivingScore" MARKS={generalMarks} setPreferences={setPreferences}/>
-        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Job Market" preferences={preferences} category="jobScore" MARKS={generalMarks} setPreferences={setPreferences}/>
-        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Crime Safety" preferences={preferences} category="crimeScore" MARKS={generalMarks} setPreferences={setPreferences}/>
-        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Nightlife" preferences={preferences} category="nightlifeScore" MARKS={generalMarks} setPreferences={setPreferences}/>
-        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Housing Market" preferences={preferences} category="housingScore" MARKS={generalMarks} setPreferences={setPreferences}/>
-        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Family Friendly" preferences={preferences} category="familyScore" MARKS={generalMarks} setPreferences={setPreferences}/>
-        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Diversity" preferences={preferences} category="diversityScore" MARKS={generalMarks} setPreferences={setPreferences}/>
-        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Weather" preferences={preferences} category="weatherScore" MARKS={generalMarks} setPreferences={setPreferences}/>
-        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Outdoor Activities" preferences={preferences} category="outdoorScore" MARKS={generalMarks} setPreferences={setPreferences}/>
-        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Commute" preferences={preferences} category="commuteScore" MARKS={generalMarks} setPreferences={setPreferences}/>
-        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Health & Fitness" preferences={preferences} category="healthAndFitnessScore" MARKS={generalMarks} setPreferences={setPreferences}/>
+    <div className="flex lg:flex-col flex-wrap w-full lg:w-3/5 justify-center items-center shadow-md sm:rounded-lg m-0">
+      <PreferenceSlider step={25} categoryHeading="Minimum City Population" preferences={preferences} category="population" MARKS={populationMarks} setPreferences={setPreferences} />
+      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Cost of Living" preferences={preferences} category="costOfLivingScore" MARKS={generalMarks} setPreferences={setPreferences} />
+      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Job Market" preferences={preferences} category="jobScore" MARKS={generalMarks} setPreferences={setPreferences} />
+      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Crime Safety" preferences={preferences} category="crimeScore" MARKS={generalMarks} setPreferences={setPreferences} />
+      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Nightlife" preferences={preferences} category="nightlifeScore" MARKS={generalMarks} setPreferences={setPreferences} />
+      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Housing Market" preferences={preferences} category="housingScore" MARKS={generalMarks} setPreferences={setPreferences} />
+      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Family Friendly" preferences={preferences} category="familyScore" MARKS={generalMarks} setPreferences={setPreferences} />
+      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Diversity" preferences={preferences} category="diversityScore" MARKS={generalMarks} setPreferences={setPreferences} />
+      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Weather" preferences={preferences} category="weatherScore" MARKS={generalMarks} setPreferences={setPreferences} />
+      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Outdoor Activities" preferences={preferences} category="outdoorScore" MARKS={generalMarks} setPreferences={setPreferences} />
+      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Commute" preferences={preferences} category="commuteScore" MARKS={generalMarks} setPreferences={setPreferences} />
+      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Health & Fitness" preferences={preferences} category="healthAndFitnessScore" MARKS={generalMarks} setPreferences={setPreferences} />
 
     </div>
   );
@@ -164,11 +166,11 @@ const RankingList = ({ preferences }) => {
       );
       temp = temp.sort(function (city1, city2) {
         let city1Score =
-          preferences.publicSchoolScore*city1.publicSchoolScore +
-          preferences.crimeScore*city1.crimeScore +
-          preferences.housingScore *city1.housingScore +
-          preferences.nightlifeScore *city1.nightlifeScore +
-          preferences.familyScore *city1.familyScore +
+          preferences.publicSchoolScore * city1.publicSchoolScore +
+          preferences.crimeScore * city1.crimeScore +
+          preferences.housingScore * city1.housingScore +
+          preferences.nightlifeScore * city1.nightlifeScore +
+          preferences.familyScore * city1.familyScore +
           preferences.diversityScore * city1.diversityScore +
           preferences.jobScore * city1.jobScore +
           preferences.costOfLivingScore * city1.costOfLivingScore +
@@ -176,13 +178,13 @@ const RankingList = ({ preferences }) => {
           preferences.healthAndFitnessScore * city1.healthAndFitnessScore +
           preferences.outdoorScore * city1.outdoorScore +
           preferences.commuteScore * city1.commuteScore;
-        
-          let city2Score =
-          preferences.publicSchoolScore*city2.publicSchoolScore +
-          preferences.crimeScore*city2.crimeScore +
-          preferences.housingScore *city2.housingScore +
-          preferences.nightlifeScore *city2.nightlifeScore +
-          preferences.familyScore *city2.familyScore +
+
+        let city2Score =
+          preferences.publicSchoolScore * city2.publicSchoolScore +
+          preferences.crimeScore * city2.crimeScore +
+          preferences.housingScore * city2.housingScore +
+          preferences.nightlifeScore * city2.nightlifeScore +
+          preferences.familyScore * city2.familyScore +
           preferences.diversityScore * city2.diversityScore +
           preferences.jobScore * city2.jobScore +
           preferences.costOfLivingScore * city2.costOfLivingScore +
@@ -190,7 +192,7 @@ const RankingList = ({ preferences }) => {
           preferences.healthAndFitnessScore * city2.healthAndFitnessScore +
           preferences.outdoorScore * city2.outdoorScore +
           preferences.commuteScore * city2.commuteScore;
-        
+
 
         if (city1Score > city2Score) return -1;
         if (city1Score < city2Score) return 1;
@@ -199,7 +201,7 @@ const RankingList = ({ preferences }) => {
     });
   }, [preferences]);
   return (
-    <div className=" flex flex-col items-center  relative  shadow-md sm:rounded-lg h-1/2 overflow-auto m-8 w-2/3">
+    <div className=" flex flex-col items-center  relative  shadow-md sm:rounded-lg max-h-96 overflow-y-auto m-6 w-5/6">
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
@@ -209,33 +211,33 @@ const RankingList = ({ preferences }) => {
             <th scope="col" className="px-2 py-3">
               Population
             </th>
-            <th scope="col" className="px-2 py-3">
+            <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
               Crime
             </th>
-            <th scope="col" className="px-2 py-3">
+            <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
               Nightlife
             </th>
-            <th scope="col" className="px-2 py-3">
+            <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
               Weather
             </th>
-            <th scope="col" className="px-2 py-3">
+            <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
               Schools
             </th>
-            <th scope="col" className="px-2 py-3">
+            <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
               Housing
             </th>
-            <th scope="col" className="px-2 py-3">
+            <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
               Cost of Living
             </th>
-            <th scope="col" className="px-2 py-3">
+            <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
               Outdoors
             </th>
-            <th scope="col" className="px-2 py-3">
+            <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
               Job Market
             </th>
-            
-            <th scope="col" className="px-2 py-3">
-              <span className="sr-only">Compare</span>
+
+            <th scope="col" className="px-2 py-3 hidden lg:flex ">
+              <span className="sr-only ">Compare</span>
             </th>
           </tr>
         </thead>
@@ -258,15 +260,15 @@ const RankingList = ({ preferences }) => {
                 >
                   {city.population}
                 </td>
-                <td className="px-6 py-4">{city.crimeScore}</td>
-                <td className="px-6 py-4">{city.nightlifeScore}</td>
-                <td className="px-6 py-4">{city.weatherScore}</td>
-                <td className="px-6 py-4">{city.publicSchoolScore}</td>
-                <td className="px-6 py-4">{city.housingScore}</td>
-                <td className="px-6 py-4">{city.costOfLivingScore}</td>
-                <td className="px-6 py-4">{city.outdoorScore}</td>
-                <td className="px-6 py-4">{city.jobScore}</td>
-                <td className="px-6 py-4 text-right">
+                <td className="px-6 py-4 hidden lg:table-cell ">{city.crimeScore}</td>
+                <td className="px-6 py-4 hidden lg:table-cell ">{city.nightlifeScore}</td>
+                <td className="px-6 py-4 hidden lg:table-cell ">{city.weatherScore}</td>
+                <td className="px-6 py-4 hidden lg:table-cell ">{city.publicSchoolScore}</td>
+                <td className="px-6 py-4 hidden lg:table-cell ">{city.housingScore}</td>
+                <td className="px-6 py-4 hidden lg:table-cell ">{city.costOfLivingScore}</td>
+                <td className="px-6 py-4 hidden lg:table-cell ">{city.outdoorScore}</td>
+                <td className="px-6 py-4 hidden lg:table-cell ">{city.jobScore}</td>
+                <td className="px-6 py-4 text-right hidden lg:table-cell ">
                   <a
                     href="#"
                     className="font-medium text-blue-600 dark:text-blue-500 hover:underline"

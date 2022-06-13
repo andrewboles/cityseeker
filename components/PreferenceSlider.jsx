@@ -3,10 +3,10 @@ import { Slider } from "@mantine/core";
 export default function PreferenceSlider ({categoryHeading, category, MARKS, setPreferences, step, preferences, min=0, max=100}) {
 
     return (
-      <div className="flex flex-col w-1/4  mx-5">
-      <h2 className="mb-1">{categoryHeading}</h2>
+      <div className="flex flex-col w-40 mx-3 lg:w-72">
+      <h2 >{categoryHeading}</h2>
         <Slider
-          className="mb-10"
+          className="mb-8"
           onChangeEnd={(e) =>
             setPreferences((preferences) => {
               return { ...preferences, [category]: e };
