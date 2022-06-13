@@ -40,21 +40,21 @@ export default function CityCard({ results, setForecastResults }) {
     ]
 
     return (
-        <div className="flex flex-col items-start bg-ash rounded-xl p-8 dark:bg-slate-800 m-10 shadow-xl w-1/2">
+        <div className="flex flex-col items-start bg-ash rounded-xl p-8 dark:bg-slate-800 m-10 shadow-xl ">
             <div className="flex justify-between w-full">
-                <h2 className="text-xl font-semibold text-stone-blue">{results[0].city}</h2>
+                <h2 className="text-xl font-semibold text-stone-blue w-1/2">{results[0].city}</h2>
                 vs
                 <h2 className="text-xl font-semibold text-stone-blue">{results[1].city}</h2>
             </div>
             <div className="flex flex-col items-center justify-center bg-ash w-full flex-grow" >
                 {resultsAndCriteria.map(item => {
                     return (
-                        item.criteria == true ? <StatItem title={item.title} value={item.value1} /> : null
+                        item.criteria == true ? <StatItem item={item} /> : null
                     )
                 })}
             </div>
             <button
-                className="bg-moss text-slate-blue shadow-md hover:shadow-lg p-4 rounded-md mt-5"
+                className="bg-cobalt text-eggwhite shadow-md hover:shadow-xl p-4 rounded-md mt-5"
                 type="submit"
                 onClick={()=>setForecastResults(null)}
             >
@@ -65,17 +65,23 @@ export default function CityCard({ results, setForecastResults }) {
 }
 /* { currentTemp, minTemp, maxTemp, city, conditions, snowTotal, snowDays, rainTotal, rainDays } */
 
-const StatItem = ({ title, value, criteria }) => {
+const StatItem = ({ item }) => {
 
     return (
         <>
-            {value ?
-                <>
-                    <div className="flex p-4 items-center bg-eggwhite rounded-lg mx-6 my-3 shadow-md hover:shadow-lg hover:bg-cobalt h-20 w-5/6 justify-between">
-                        <h2 className="text-stone-blue text-lg font-medium">{title}</h2>
-                        <h2 className="text-stone-blue text-xl font-semibold">{value}</h2>
+            {item ?
+                <div className="flex w-full justify-between">
+                    <div className="flex p-4 items-center bg-eggwhite rounded-lg mx-3 my-3 shadow-md hover:shadow-lg hover:bg-cobalt h-20 w-1/2 justify-between">
+                        <h2 className="text-stone-blue text-lg font-medium">{item.title}</h2>
+                        <h2 className="text-stone-blue text-xl font-semibold ml-3">{item.value1}</h2>
                     </div>
-                </> :
+                    <div className="flex p-4 items-center bg-moss rounded-lg  my-3 shadow-md hover:shadow-lg h-20 text-stone-blue text-medium font-medium  w-16 justify-center">
+                      {item.value1 - item.value2 > 0 ? (`+${(item.value1-item.value2).toFixed(1)}`) : ((item.value1-item.value2).toFixed(1)) }
+                    </div>
+                    <div className="flex p-4 items-center bg-eggwhite rounded-lg mx-3 text-stone-blue text-xl font-semibold  my-3 shadow-md hover:shadow-lg hover:bg-cobalt h-20 w-16 justify-center">
+                      {item.value2}
+                    </div>
+                </div> :
                 <div className="flex p-4 bg-eggwhite rounded-lg mx-6 my-3 shadow-md hover:shadow-lg  h-20 w-5/6 justify-between animate-pulse">
                 </div>
             }

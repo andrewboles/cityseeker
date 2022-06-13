@@ -1,7 +1,7 @@
 const axios = require("axios")
 const fs = require('fs')
 
-let rawdata = fs.readFileSync('citieslist.json');
+let rawdata = fs.readFileSync('citieslist2.json');
 let cities = JSON.parse(rawdata);
 let completeCityResults = {}
 
@@ -31,18 +31,14 @@ const getCityDetails = async cityQuery => {
       }).then(response => {
         let cityCode = null;
         console.log(response.data);
-
-        if (response.data[0].type === "Town") {
-          cityCode = response.data[0].urlFragment;
-        } else {
-          if (response.data[1].type === "Town") {
-
-            cityCode = response.data[1].urlFragment;
-          } else {
-
-            cityCode = response.data[2].urlFragment;
+        let i = 0
+        do{
+          if (response.data[i].type === "Town") {
+            cityCode = response.data[i].urlFragment;
           }
-        }
+          i++
+        } while (!cityCode)
+        
         return cityCode
       }).then(cityCode => {
         setTimeout(() => {
@@ -54,16 +50,19 @@ const getCityDetails = async cityQuery => {
             }
           }).then(response => {
             completeCityResults[cityQuery] = response.data;
-            console.log(completeCityResults)
             resolve()
           }).catch(function (error) {
+            completeCityResults[cityQuery] = "error"
             console.log(error)
+            resolve()
           })
         }, 1500)
 
 
       }).catch(function (error) {
+        completeCityResults[cityQuery] = "error"
         console.log(error)
+        resolve()
       });
     }, 1500)
   })
@@ -73,5 +72,5 @@ const getCityDetails = async cityQuery => {
 collectData().then(nada => {
   console.log("WRITING DATA")
   let data = JSON.stringify(completeCityResults, null, 2);
-  fs.writeFileSync('results.json', data);
+  fs.writeFileSync('results2.json', data);
 })

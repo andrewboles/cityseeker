@@ -6,6 +6,7 @@
   "license": "none",
   "dependencies": {
     "axios": "^0.27.2",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "json-loader": "^0.5.7"
   }
 }
