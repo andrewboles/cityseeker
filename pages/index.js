@@ -53,7 +53,7 @@ export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center h-screen w-screen">
       <RankingList {...{ preferences }} />
-      <div className="flex flex-col lg:flex-row  w-screen lg:h-1/2 justify-center">
+      <div className="flex flex-col lg:flex-row  w-screen lg:h-1/2 justify-center items-center">
         <SliderSet {...{ preferences, setPreferences }} />
         <SearchCard {...{ setForecastResults }} />
       </div>
@@ -135,20 +135,23 @@ const SliderSet = ({ preferences, setPreferences }) => {
   ];
 
   return (
-    <div className="flex lg:flex-col flex-wrap w-full lg:w-1/2 justify-center items-center shadow-md sm:rounded-lg m-0 pb-4">
-      <PreferenceSlider step={25} categoryHeading="Minimum City Population" preferences={preferences} category="population" MARKS={populationMarks} setPreferences={setPreferences} />
-      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Cost of Living" preferences={preferences} category="costOfLivingScore" MARKS={generalMarks} setPreferences={setPreferences} />
-      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Job Market" preferences={preferences} category="jobScore" MARKS={generalMarks} setPreferences={setPreferences} />
-      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Crime Safety" preferences={preferences} category="crimeScore" MARKS={generalMarks} setPreferences={setPreferences} />
-      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Nightlife" preferences={preferences} category="nightlifeScore" MARKS={generalMarks} setPreferences={setPreferences} />
-      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Housing Market" preferences={preferences} category="housingScore" MARKS={generalMarks} setPreferences={setPreferences} />
-      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Family Friendly" preferences={preferences} category="familyScore" MARKS={generalMarks} setPreferences={setPreferences} />
-      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Diversity" preferences={preferences} category="diversityScore" MARKS={generalMarks} setPreferences={setPreferences} />
-      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Weather" preferences={preferences} category="weatherScore" MARKS={generalMarks} setPreferences={setPreferences} />
-      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Outdoor Activities" preferences={preferences} category="outdoorScore" MARKS={generalMarks} setPreferences={setPreferences} />
-      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Commute" preferences={preferences} category="commuteScore" MARKS={generalMarks} setPreferences={setPreferences} />
-      <PreferenceSlider min={0} max={5} step={1} categoryHeading="Health & Fitness" preferences={preferences} category="healthAndFitnessScore" MARKS={generalMarks} setPreferences={setPreferences} />
-
+    <div className="flex flex-row w-full lg:w-1/2 justify-center items-center shadow-md sm:rounded-lg m-6 p-2">
+      <div className="w-1/2 m-4 flex flex-col items-center justify-center p-2">
+        <PreferenceSlider step={25} categoryHeading="Minimum City Population" preferences={preferences} category="population" MARKS={populationMarks} setPreferences={setPreferences} />
+        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Cost of Living" preferences={preferences} category="costOfLivingScore" MARKS={generalMarks} setPreferences={setPreferences} />
+        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Job Market" preferences={preferences} category="jobScore" MARKS={generalMarks} setPreferences={setPreferences} />
+        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Crime Safety" preferences={preferences} category="crimeScore" MARKS={generalMarks} setPreferences={setPreferences} />
+        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Nightlife" preferences={preferences} category="nightlifeScore" MARKS={generalMarks} setPreferences={setPreferences} />
+        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Housing Market" preferences={preferences} category="housingScore" MARKS={generalMarks} setPreferences={setPreferences} />
+      </div>
+      <div className="w-1/2 m-2 flex flex-col items-center justify-center">
+        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Family Friendly" preferences={preferences} category="familyScore" MARKS={generalMarks} setPreferences={setPreferences} />
+        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Diversity" preferences={preferences} category="diversityScore" MARKS={generalMarks} setPreferences={setPreferences} />
+        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Weather" preferences={preferences} category="weatherScore" MARKS={generalMarks} setPreferences={setPreferences} />
+        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Outdoor Activities" preferences={preferences} category="outdoorScore" MARKS={generalMarks} setPreferences={setPreferences} />
+        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Commute" preferences={preferences} category="commuteScore" MARKS={generalMarks} setPreferences={setPreferences} />
+        <PreferenceSlider min={0} max={5} step={1} categoryHeading="Health & Fitness" preferences={preferences} category="healthAndFitnessScore" MARKS={generalMarks} setPreferences={setPreferences} />
+      </div>
     </div>
   );
 };
@@ -201,7 +204,7 @@ const RankingList = ({ preferences }) => {
     });
   }, [preferences]);
   return (
-    <div className=" flex flex-col items-center  relative  shadow-md sm:rounded-lg  overflow-y-auto m-4 w-5/6">
+    <div className=" flex justify-center items-center relative  shadow-md sm:rounded-lg  overflow-y-auto m-8 w-11/12">
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 sticky top-0 z-10">
           <tr>
