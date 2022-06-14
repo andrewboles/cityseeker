@@ -135,7 +135,7 @@ const SliderSet = ({ preferences, setPreferences }) => {
   ];
 
   return (
-    <div className="flex lg:flex-col flex-wrap w-full lg:w-3/5 justify-center items-center shadow-md sm:rounded-lg m-0">
+    <div className="flex lg:flex-col flex-wrap w-full lg:w-1/2 justify-center items-center shadow-md sm:rounded-lg m-0 pb-4">
       <PreferenceSlider step={25} categoryHeading="Minimum City Population" preferences={preferences} category="population" MARKS={populationMarks} setPreferences={setPreferences} />
       <PreferenceSlider min={0} max={5} step={1} categoryHeading="Cost of Living" preferences={preferences} category="costOfLivingScore" MARKS={generalMarks} setPreferences={setPreferences} />
       <PreferenceSlider min={0} max={5} step={1} categoryHeading="Job Market" preferences={preferences} category="jobScore" MARKS={generalMarks} setPreferences={setPreferences} />
@@ -201,9 +201,9 @@ const RankingList = ({ preferences }) => {
     });
   }, [preferences]);
   return (
-    <div className=" flex flex-col items-center  relative  shadow-md sm:rounded-lg max-h-96 overflow-y-auto m-6 w-5/6">
-      <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <div className=" flex flex-col items-center  relative  shadow-md sm:rounded-lg  overflow-y-auto m-4 w-5/6">
+      <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 sticky top-0 z-10">
           <tr>
             <th scope="col" className="px-2 py-3">
               City
