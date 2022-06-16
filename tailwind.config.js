@@ -11,7 +11,8 @@ module.exports = {
         'stone-blue': '#23292f',
         'ash': '#e0e1da',
         'moss': '#8A8936',
-
+        'lime': '#82C91E',
+        'pink': '#E64980'
       }
     },
   },
