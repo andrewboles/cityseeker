@@ -4,6 +4,8 @@ import Select from "react-select";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import PreferenceSlider from "../components/PreferenceSlider";
 import CityProgressCompareBar from "../components/CityCompareProgressBar";
+import { initialData } from "../lib/initialDragData";
+
 const citiesData = require("../citydataacquire/results");
 let citiesList = [];
 const cityKeys = Object.keys(citiesData);
@@ -30,17 +32,22 @@ cityKeys.map((city) => {
     commuteScore: citiesData[city]["report-card"]["Commute"]["value"],
     population: citiesData[city]["about"]["Population"]["value"],
 
-    medianHouseholdIncome: citiesData[city]["working-in"]["Median Household Income"]["value"],
+    medianHouseholdIncome:
+      citiesData[city]["working-in"]["Median Household Income"]["value"],
     medianRent: citiesData[city]["real-estate"]["Median Rent"]["value"],
-    medianHomeValue: citiesData[city]["real-estate"]["Median Home Value"]["value"]
+    medianHomeValue:
+      citiesData[city]["real-estate"]["Median Home Value"]["value"],
   });
 });
 
 export default function Home() {
   const [compareDisabled, setCompareDisabled] = useState(false);
   const [searchCities, setSearchCities] = useState({ city1: "", city2: "" });
+  const [prefColumnOrder, setPrefColumnOrder] = useState(initialData);
   const [preferences, setPreferences] = useState({
-    population: 50,
+    population: [250000, 2000000],
+    medianHomeValue: [200000, 1000000],
+    medianRent: [500, 2000 ],
     costOfLivingScore: 3,
     jobScore: 3,
     publicSchoolScore: 3,
@@ -55,20 +62,22 @@ export default function Home() {
     outdoorScore: 3,
     commuteScore: 3,
   });
-  useEffect(()=>{
-    if(searchCities.city1 !== "" && searchCities.city2 !== ""){
-      setCompareDisabled(true)
+  useEffect(() => {
+    if (searchCities.city1 !== "" && searchCities.city2 !== "") {
+      setCompareDisabled(true);
     } else {
-      setCompareDisabled(false)
+      setCompareDisabled(false);
     }
-  },[searchCities])
+  }, [searchCities]);
 
   return (
     <div className="flex flex-col justify-center items-center h-screen w-screen">
-      <RankingList {...{ preferences, compareDisabled, setSearchCities, searchCities }} />
+      <RankingList
+        {...{ preferences, compareDisabled, setSearchCities, searchCities }}
+      />
       <div className="flex flex-col lg:flex-row w-screen justify-center items-center">
         <SliderSet {...{ preferences, setPreferences }} />
-        <SearchCard {...{  setSearchCities, searchCities }} />
+        <SearchCard {...{ setSearchCities, searchCities }} />
       </div>
     </div>
   );
@@ -80,7 +89,6 @@ const SearchCard = ({ searchCities, setSearchCities }) => {
     city2: {},
   });
 
-
   useEffect(() => {
     if (searchCities.city1 !== "") {
       fetchForecast(searchCities.city1.value).then((values) => {
@@ -91,7 +99,6 @@ const SearchCard = ({ searchCities, setSearchCities }) => {
   }, [searchCities.city1]);
   useEffect(() => {
     if (searchCities.city2 !== "") {
-
       fetchForecast(searchCities.city2.value).then((values) => {
         console.log(values);
         setForecastResults({ ...forecastResults, city2: values });
@@ -99,31 +106,105 @@ const SearchCard = ({ searchCities, setSearchCities }) => {
     }
   }, [searchCities.city2]);
 
-  const handleRemoveClick = e => {
-    setSearchCities({...searchCities, [e.target.id]: ""})
-    setForecastResults({...forecastResults, [e.target.id]:{}})
-  }
+  const handleRemoveClick = (e) => {
+    setSearchCities({ ...searchCities, [e.target.id]: "" });
+    setForecastResults({ ...forecastResults, [e.target.id]: {} });
+  };
 
   return (
     <div className="flex flex-col w-full lg:w-1/2 justify-center items-center shadow-md rounded-lg m-2  p-2">
       <div className="flex w-full justify-around">
         <div className="flex align-center">
           <h2 className="bg-lime rounded-md p-1">{searchCities.city1.value}</h2>
-          {searchCities.city1 !== "" && <button className="ml-2 p-1 text-ash text-sm bg-cobalt border-2 rounded-md" onClick={handleRemoveClick} id="city1">X</button>}
+          {searchCities.city1 !== "" && (
+            <button
+              className="ml-2 p-1 text-ash text-sm bg-cobalt border-2 rounded-md"
+              onClick={handleRemoveClick}
+              id="city1"
+            >
+              X
+            </button>
+          )}
         </div>
         <div className="flex align-center">
           <h2 className="bg-pink rounded-md p-1">{searchCities.city2.value}</h2>
-          {searchCities.city2 !== "" && <button className="ml-2 p-1 text-ash text-sm bg-cobalt border-2 rounded-md" onClick={handleRemoveClick} id="city2">X</button>}
+          {searchCities.city2 !== "" && (
+            <button
+              className="ml-2 p-1 text-ash text-sm bg-cobalt border-2 rounded-md"
+              onClick={handleRemoveClick}
+              id="city2"
+            >
+              X
+            </button>
+          )}
         </div>
       </div>
       <div className="flex flex-col w-full">
-        <CityProgressCompareBar heading="Median Home Price" values={{city1: searchCities.city1.medianHomeValue/11000, city2: searchCities.city2.medianHomeValue/11000}} labels={{city1: searchCities.city1.medianHomeValue, city2: searchCities.city2.medianHomeValue}} />
-        <CityProgressCompareBar heading="Median Rent" values={{city1: searchCities.city1.medianRent/30, city2: searchCities.city2.medianRent/30}} labels={{city1: searchCities.city1.medianRent, city2: searchCities.city2.medianRent}}/>
-        <CityProgressCompareBar heading="Median Household Income" values={{city1: searchCities.city1.medianHouseholdIncome/1500, city2: searchCities.city2.medianHouseholdIncome/1500}} labels={{city1: searchCities.city1.medianHouseholdIncome, city2: searchCities.city2.medianHouseholdIncome}}/>
-        <CityProgressCompareBar heading="Yearly Min Temp" values={{city1: forecastResults.city1.yearlyMinTemp, city2: forecastResults.city2.yearlyMinTemp}} />
-        <CityProgressCompareBar heading="Yearly Max Temp" values={{city1: forecastResults.city1.yearlyMaxTemp/1.2, city2: forecastResults.city2.yearlyMaxTemp/1.2}} labels={{city1: forecastResults.city1.yearlyMaxTemp, city2: forecastResults.city2.yearlyMaxTemp}}/>
-        <CityProgressCompareBar heading="Days of Rain" values={{city1: forecastResults.city1.rainDays, city2: forecastResults.city2.rainDays}} />
-        <CityProgressCompareBar heading="Days of Snow" values={{city1: forecastResults.city1.snowDays, city2: forecastResults.city2.snowDays}}/>
+        <CityProgressCompareBar
+          heading="Median Home Price"
+          values={{
+            city1: searchCities.city1.medianHomeValue / 11000,
+            city2: searchCities.city2.medianHomeValue / 11000,
+          }}
+          labels={{
+            city1: searchCities.city1.medianHomeValue,
+            city2: searchCities.city2.medianHomeValue,
+          }}
+        />
+        <CityProgressCompareBar
+          heading="Median Rent"
+          values={{
+            city1: searchCities.city1.medianRent / 30,
+            city2: searchCities.city2.medianRent / 30,
+          }}
+          labels={{
+            city1: searchCities.city1.medianRent,
+            city2: searchCities.city2.medianRent,
+          }}
+        />
+        <CityProgressCompareBar
+          heading="Median Household Income"
+          values={{
+            city1: searchCities.city1.medianHouseholdIncome / 1500,
+            city2: searchCities.city2.medianHouseholdIncome / 1500,
+          }}
+          labels={{
+            city1: searchCities.city1.medianHouseholdIncome,
+            city2: searchCities.city2.medianHouseholdIncome,
+          }}
+        />
+        <CityProgressCompareBar
+          heading="Yearly Min Temp"
+          values={{
+            city1: forecastResults.city1.yearlyMinTemp,
+            city2: forecastResults.city2.yearlyMinTemp,
+          }}
+        />
+        <CityProgressCompareBar
+          heading="Yearly Max Temp"
+          values={{
+            city1: forecastResults.city1.yearlyMaxTemp / 1.2,
+            city2: forecastResults.city2.yearlyMaxTemp / 1.2,
+          }}
+          labels={{
+            city1: forecastResults.city1.yearlyMaxTemp,
+            city2: forecastResults.city2.yearlyMaxTemp,
+          }}
+        />
+        <CityProgressCompareBar
+          heading="Days of Rain"
+          values={{
+            city1: forecastResults.city1.rainDays,
+            city2: forecastResults.city2.rainDays,
+          }}
+        />
+        <CityProgressCompareBar
+          heading="Days of Snow"
+          values={{
+            city1: forecastResults.city1.snowDays,
+            city2: forecastResults.city2.snowDays,
+          }}
+        />
       </div>
     </div>
   );
@@ -131,11 +212,12 @@ const SearchCard = ({ searchCities, setSearchCities }) => {
 
 const SliderSet = ({ preferences, setPreferences }) => {
   const populationMarks = [
-    { value: 0, label: "0" },
-    { value: 25, label: "250k" },
-    { value: 50, label: "500k" },
-    { value: 75, label: "750k" },
-    { value: 100, label: "1M" },
+    { value: 100000, label: "100k" },
+    { value: 500000, label: "500k" },
+    { value: 1000000, label: "1M" },
+    { value: 1500000, label: "1.5M" },
+    { value: 2000000, label: "2M" },
+    { value: 2500000, label: "Infinite" },
   ];
 
   const generalMarks = [
@@ -147,142 +229,84 @@ const SliderSet = ({ preferences, setPreferences }) => {
     { value: 5, label: "5" },
   ];
 
+  const rentMarks = [
+    { value: 500, label: "$500" },
+    { value: 750, label: "$750" },
+    { value: 1000, label: "$1k" },
+    { value: 1250, label: "$1.25k" },
+    { value: 1500, label: "$1.5k" },
+    { value: 1750, label: "$1.75k" },
+    { value: 2000, label: "Infinite" },
+  ];
+
+  const homeCostMarks = [
+    { value: 100000, label: "$100k" },
+    { value: 250000, label: "$250k" },
+    { value: 500000, label: "$500k" },
+    { value: 750000, label: "$750k" },
+    { value: 1000000, label: "Infinite" },
+  ];
+
   return (
-    <div className="flex w-full lg:w-1/2 justify-center items-center shadow-md rounded-lg m-6 p-2">
+    <div className="flex h-full w-full lg:w-1/2 justify-center items-center shadow-md rounded-lg m-6 p-2">
       <div className="w-1/2 m-4 flex flex-col items-center justify-center p-2">
         <PreferenceSlider
-          step={25}
-          categoryHeading="Minimum City Population"
+          min={100000}
+          max={2500000}
+          categoryHeading="Preferred City Population"
           preferences={preferences}
           category="population"
           MARKS={populationMarks}
           setPreferences={setPreferences}
         />
         <PreferenceSlider
-          min={0}
-          max={5}
-          step={1}
-          categoryHeading="Cost of Living"
+          min={100000}
+          max={1000000}
+          categoryHeading="Prefered Median Home Value"
           preferences={preferences}
-          category="costOfLivingScore"
-          MARKS={generalMarks}
+          category="medianHomeValue"
+          MARKS={homeCostMarks}
           setPreferences={setPreferences}
         />
         <PreferenceSlider
-          min={0}
-          max={5}
-          step={1}
-          categoryHeading="Job Market"
+          min={500}
+          max={2000}
+          categoryHeading="Preferred Median Rent"
           preferences={preferences}
-          category="jobScore"
-          MARKS={generalMarks}
-          setPreferences={setPreferences}
-        />
-        <PreferenceSlider
-          min={0}
-          max={5}
-          step={1}
-          categoryHeading="Crime Safety"
-          preferences={preferences}
-          category="crimeScore"
-          MARKS={generalMarks}
-          setPreferences={setPreferences}
-        />
-        <PreferenceSlider
-          min={0}
-          max={5}
-          step={1}
-          categoryHeading="Nightlife"
-          preferences={preferences}
-          category="nightlifeScore"
-          MARKS={generalMarks}
-          setPreferences={setPreferences}
-        />
-        <PreferenceSlider
-          min={0}
-          max={5}
-          step={1}
-          categoryHeading="Housing Market"
-          preferences={preferences}
-          category="housingScore"
-          MARKS={generalMarks}
+          category="medianRent"
+          MARKS={rentMarks}
           setPreferences={setPreferences}
         />
       </div>
-      <div className="w-1/2 m-2 flex flex-col items-center justify-center">
-        <PreferenceSlider
-          min={0}
-          max={5}
-          step={1}
-          categoryHeading="Family Friendly"
-          preferences={preferences}
-          category="familyScore"
-          MARKS={generalMarks}
-          setPreferences={setPreferences}
-        />
-        <PreferenceSlider
-          min={0}
-          max={5}
-          step={1}
-          categoryHeading="Diversity"
-          preferences={preferences}
-          category="diversityScore"
-          MARKS={generalMarks}
-          setPreferences={setPreferences}
-        />
-        <PreferenceSlider
-          min={0}
-          max={5}
-          step={1}
-          categoryHeading="Weather"
-          preferences={preferences}
-          category="weatherScore"
-          MARKS={generalMarks}
-          setPreferences={setPreferences}
-        />
-        <PreferenceSlider
-          min={0}
-          max={5}
-          step={1}
-          categoryHeading="Outdoor Activities"
-          preferences={preferences}
-          category="outdoorScore"
-          MARKS={generalMarks}
-          setPreferences={setPreferences}
-        />
-        <PreferenceSlider
-          min={0}
-          max={5}
-          step={1}
-          categoryHeading="Commute"
-          preferences={preferences}
-          category="commuteScore"
-          MARKS={generalMarks}
-          setPreferences={setPreferences}
-        />
-        <PreferenceSlider
-          min={0}
-          max={5}
-          step={1}
-          categoryHeading="Health & Fitness"
-          preferences={preferences}
-          category="healthAndFitnessScore"
-          MARKS={generalMarks}
-          setPreferences={setPreferences}
-        />
+      <div className="w-1/2 m-4 flex flex-col items-center justify-center p-2">
+        <h2>List Goes Here</h2>
       </div>
     </div>
   );
 };
 
-const RankingList = ({ preferences, compareDisabled, setSearchCities, searchCities }) => {
+const RankingList = ({
+  preferences,
+  compareDisabled,
+  setSearchCities,
+  searchCities,
+}) => {
   const [shortList, setShortList] = useState([]);
   const [animationParent] = useAutoAnimate();
   useEffect(() => {
     setShortList(citiesList);
     setShortList((current) => {
       let temp = current.filter(
-        (city) => city.population > preferences.population * 10000
+        (city) =>
+          city.population > preferences.population[0] &&
+          (preferences.population[1] > 2490000 ||
+            city.population < preferences.population[1]) &&
+          city.medianHomeValue > preferences.medianHomeValue[0] &&
+          (preferences.medianHomeValue[1] > 990000 ||
+            city.medianHomeValue < preferences.medianHomeValue[1]) &&
+          city.medianRent > preferences.medianRent[0] &&
+          (preferences.medianRent[1] > 1950 ||
+            city.medianRent < preferences.medianRent[1])
       );
       temp = temp.sort(function (city1, city2) {
         let city1Score =
@@ -320,11 +344,11 @@ const RankingList = ({ preferences, compareDisabled, setSearchCities, searchCiti
     });
   }, [preferences]);
 
-  const handleCompareClick = (e) => { 
-    if(searchCities.city1 === ""){
-      setSearchCities({...searchCities, city1: shortList[e.target.id]})
+  const handleCompareClick = (e) => {
+    if (searchCities.city1 === "") {
+      setSearchCities({ ...searchCities, city1: shortList[e.target.id] });
     } else {
-      setSearchCities({...searchCities, city2: shortList[e.target.id]})
+      setSearchCities({ ...searchCities, city2: shortList[e.target.id] });
     }
   };
 
@@ -343,6 +367,12 @@ const RankingList = ({ preferences, compareDisabled, setSearchCities, searchCiti
               Population
             </th>
             <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
+              Median Rent
+            </th>
+            <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
+              Median Home Value
+            </th>
+            <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
               Crime
             </th>
             <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
@@ -353,9 +383,6 @@ const RankingList = ({ preferences, compareDisabled, setSearchCities, searchCiti
             </th>
             <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
               Schools
-            </th>
-            <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
-              Housing
             </th>
             <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
               Cost of Living
@@ -379,7 +406,7 @@ const RankingList = ({ preferences, compareDisabled, setSearchCities, searchCiti
                 key={city.value}
                 className="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700"
               >
-                 <th
+                <th
                   scope="row"
                   className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
                 >
@@ -398,6 +425,12 @@ const RankingList = ({ preferences, compareDisabled, setSearchCities, searchCiti
                   {city.population}
                 </td>
                 <td className="px-6 py-4 hidden lg:table-cell ">
+                  {city.medianRent}
+                </td>
+                <td className="px-6 py-4 hidden lg:table-cell ">
+                  {city.medianHomeValue}
+                </td>
+                <td className="px-6 py-4 hidden lg:table-cell ">
                   {city.crimeScore}
                 </td>
                 <td className="px-6 py-4 hidden lg:table-cell ">
@@ -410,9 +443,6 @@ const RankingList = ({ preferences, compareDisabled, setSearchCities, searchCiti
                   {city.publicSchoolScore}
                 </td>
                 <td className="px-6 py-4 hidden lg:table-cell ">
-                  {city.housingScore}
-                </td>
-                <td className="px-6 py-4 hidden lg:table-cell ">
                   {city.costOfLivingScore}
                 </td>
                 <td className="px-6 py-4 hidden lg:table-cell ">
@@ -422,12 +452,15 @@ const RankingList = ({ preferences, compareDisabled, setSearchCities, searchCiti
                   {city.jobScore}
                 </td>
                 <td className="px-6 py-4 text-right hidden lg:table-cell ">
-                  
-                    
-                    <button id={index}
+                  <button
+                    id={index}
                     onClick={handleCompareClick}
-                    disabled={compareDisabled} type="button" className="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 disabled:opacity-50">Compare</button>
-
+                    disabled={compareDisabled}
+                    type="button"
+                    className="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 disabled:opacity-50"
+                  >
+                    Compare
+                  </button>
                 </td>
               </tr>
             );
