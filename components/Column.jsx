@@ -6,16 +6,16 @@ export const Column = ({ column, preferenceItems }) => {
       <h3>{column.title}</h3>
       <div className="flex flex-col">
         <Droppable droppableId={column.id}>
-          {(providedParent) => (
-            <div ref={providedParent.innerRef} {...providedParent.droppableProps}>
+          {(providedParent, snapshotParent) => (
+            <div ref={providedParent.innerRef} {...providedParent.droppableProps} className={snapshotParent.isDraggingOver ? "bg-slate-700 transition-colors" : "transition-colors"}>
               {preferenceItems.map((item, index) => (
                 <Draggable key={item.id} draggableId={item.id} index={index}>
-                  {(provided) => (
+                  {(provided, snapshot) => (
                     <div
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
                       ref={provided.innerRef}
-                      className=" rounded-md border-2 p-2 bg-white"
+                      className={snapshot.isDragging?"rounded-md border-2 p-2 bg-slate-300": "rounded-md border-2 p-2 bg-white"}
                       
                     >
                       <h3>{item.content}</h3>

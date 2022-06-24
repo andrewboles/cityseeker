@@ -2,7 +2,7 @@ import { Slider, RangeSlider } from "@mantine/core";
  
 export default function PreferenceSlider ({categoryHeading, category, MARKS, setPreferences, step, preferences, min=0, max=100}) {
     return (
-      <div className="flex flex-col mx-3 w-full l mb-5 lg:mb-6">
+      <div className="flex flex-col mx-3 w-full l mb-5">
       <h2 >{categoryHeading}</h2>
       { typeof(preferences[category]) === 'number' ? 
        <Slider

@@ -8,12 +8,10 @@ import { RankingList } from "../components/RankingList";
 import { resetServerContext } from "react-beautiful-dnd";
 
 export const getServerSideProps = async ({ query }) => {
+  resetServerContext();
 
-  resetServerContext() 
-
-  return {props: { data : []}}
-
-}
+  return { props: { data: [] } };
+};
 const citiesData = require("../citydataacquire/results");
 let citiesList = [];
 const cityKeys = Object.keys(citiesData);
@@ -56,19 +54,18 @@ export default function Home() {
     population: [250000, 2000000],
     medianHomeValue: [200000, 1000000],
     medianRent: [500, 2000],
-    costOfLivingScore: 3,
-    jobScore: 3,
-    publicSchoolScore: 3,
-    crimeScore: 3,
-    housingScore: 3,
-    nightlifeScore: 3,
-    familyScore: 3,
-    diversityScore: 3,
-    jobScore: 3,
-    weatherScore: 3,
-    healthAndFitnessScore: 3,
-    outdoorScore: 3,
-    commuteScore: 3,
+    costOfLivingScore: 7,
+    jobScore: 7,
+    publicSchoolScore: 7,
+    crimeScore: 7,
+    nightlifeScore: 7,
+    familyScore: 7,
+    diversityScore: 7,
+    jobScore: 7,
+    weatherScore: 8,
+    healthAndFitnessScore: 7,
+    outdoorScore: 7,
+    commuteScore: 7,
   });
   useEffect(() => {
     if (searchCities.city1 !== "" && searchCities.city2 !== "") {
@@ -79,21 +76,22 @@ export default function Home() {
   }, [searchCities]);
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen w-screen">
-      <RankingList
-        {...{
-          preferences,
-          compareDisabled,
-          setSearchCities,
-          searchCities,
-          citiesList,
-        }}
-      />
-       <div className="flex flex-col lg:flex-row w-screen justify-center items-center">
-        <div className="flex h-full w-full lg:w-1/2 justify-center items-center shadow-md rounded-lg m-6 p-2">
-          <SliderSet {...{ preferences, setPreferences }} />
-          <DragDrop {...{ prefColumnOrder, setPrefColumnOrder }} />
-        </div>
+    <div className="flex h-screen w-screen">
+      <div className="flex flex-col justify-around items-center md:w-1/3 lg:w-1/4">
+        <h2>cityseeker</h2>
+        <SliderSet {...{ preferences, setPreferences }} />
+        <DragDrop {...{ prefColumnOrder, setPrefColumnOrder, setPreferences }} />
+      </div>
+      <div className="flex flex-col md:w-2/3 lg:w-3/4">
+        <RankingList
+          {...{
+            preferences,
+            compareDisabled,
+            setSearchCities,
+            searchCities,
+            citiesList,
+          }}
+        />
         <SearchCard {...{ setSearchCities, searchCities }} />
       </div>
     </div>
@@ -129,34 +127,39 @@ const SearchCard = ({ searchCities, setSearchCities }) => {
   };
 
   return (
-    <div className="flex flex-col w-full lg:w-1/2 justify-center items-center shadow-md rounded-lg m-2  p-2">
-      <div className="flex w-full justify-around">
-        <div className="flex align-center">
-          <h2 className="bg-lime rounded-md p-1">{searchCities.city1.value}</h2>
-          {searchCities.city1 !== "" && (
-            <button
-              className="ml-2 p-1 text-ash text-sm bg-cobalt border-2 rounded-md"
-              onClick={handleRemoveClick}
-              id="city1"
-            >
-              X
-            </button>
-          )}
+    <div className="flex flex-row justify-center items-center shadow-md p-2">
+      <div className="flex flex-col w-1/2">
+        <div className="flex w-full justify-around">
+          <div className="flex align-center">
+            <h2 className="bg-lime rounded-md p-1">
+              {searchCities.city1.value}
+            </h2>
+            {searchCities.city1 !== "" && (
+              <button
+                className="ml-2 p-1 text-ash text-sm bg-cobalt border-2 rounded-md"
+                onClick={handleRemoveClick}
+                id="city1"
+              >
+                X
+              </button>
+            )}
+          </div>
+          <div className="flex align-center">
+            <h2 className="bg-pink rounded-md p-1">
+              {searchCities.city2.value}
+            </h2>
+            {searchCities.city2 !== "" && (
+              <button
+                className="ml-2 p-1 text-ash text-sm bg-cobalt border-2 rounded-md"
+                onClick={handleRemoveClick}
+                id="city2"
+              >
+                X
+              </button>
+            )}
+          </div>
         </div>
-        <div className="flex align-center">
-          <h2 className="bg-pink rounded-md p-1">{searchCities.city2.value}</h2>
-          {searchCities.city2 !== "" && (
-            <button
-              className="ml-2 p-1 text-ash text-sm bg-cobalt border-2 rounded-md"
-              onClick={handleRemoveClick}
-              id="city2"
-            >
-              X
-            </button>
-          )}
-        </div>
-      </div>
-      <div className="flex flex-col w-full">
+
         <CityProgressCompareBar
           heading="Median Home Price"
           values={{
@@ -190,6 +193,8 @@ const SearchCard = ({ searchCities, setSearchCities }) => {
             city2: searchCities.city2.medianHouseholdIncome,
           }}
         />
+      </div>
+      <div className="flex flex-col w-1/2">
         <CityProgressCompareBar
           heading="Yearly Min Temp"
           values={{
@@ -248,24 +253,21 @@ const SliderSet = ({ preferences, setPreferences }) => {
 
   const rentMarks = [
     { value: 500, label: "$500" },
-    { value: 750, label: "$750" },
     { value: 1000, label: "$1k" },
-    { value: 1250, label: "$1.25k" },
     { value: 1500, label: "$1.5k" },
-    { value: 1750, label: "$1.75k" },
     { value: 2000, label: "Infinite" },
   ];
 
   const homeCostMarks = [
     { value: 100000, label: "$100k" },
-    { value: 250000, label: "$250k" },
+    { value: 300000, label: "$300k" },
     { value: 500000, label: "$500k" },
     { value: 750000, label: "$750k" },
     { value: 1000000, label: "Infinite" },
   ];
 
   return (
-    <div className="w-1/2 m-4 flex flex-col items-center justify-center p-2">
+    <div className="flex flex-col items-center justify-center p-5 m-2">
       <PreferenceSlider
         min={100000}
         max={2500000}

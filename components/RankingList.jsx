@@ -29,7 +29,6 @@ export const RankingList = ({
         let city1Score =
           preferences.publicSchoolScore * city1.publicSchoolScore +
           preferences.crimeScore * city1.crimeScore +
-          preferences.housingScore * city1.housingScore +
           preferences.nightlifeScore * city1.nightlifeScore +
           preferences.familyScore * city1.familyScore +
           preferences.diversityScore * city1.diversityScore +
@@ -43,7 +42,6 @@ export const RankingList = ({
         let city2Score =
           preferences.publicSchoolScore * city2.publicSchoolScore +
           preferences.crimeScore * city2.crimeScore +
-          preferences.housingScore * city2.housingScore +
           preferences.nightlifeScore * city2.nightlifeScore +
           preferences.familyScore * city2.familyScore +
           preferences.diversityScore * city2.diversityScore +
@@ -59,7 +57,7 @@ export const RankingList = ({
       });
       return temp;
     });
-  }, [preferences]);
+  }, [citiesList, preferences]);
 
   const handleCompareClick = (e) => {
     if (searchCities.city1 === "") {
@@ -70,48 +68,48 @@ export const RankingList = ({
   };
 
   return (
-    <div className=" flex justify-center items-start relative  shadow-md sm:rounded-lg  overflow-y-auto mx-8 mt-1 w-11/12">
+    <div className=" flex justify-start items-start relative  shadow-md overflow-y-auto">
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-center text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 sticky top-0 z-10">
           <tr>
-            <th scope="col" className="px-2 py-3">
+            <th scope="col" className="px-1 py-3">
               Rank
             </th>
-            <th scope="col" className="px-2 py-3">
+            <th scope="col" className="px-1 py-3">
               City
             </th>
-            <th scope="col" className="px-2 py-3">
+            <th scope="col" className="px-1 py-3">
               Population
             </th>
-            <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
+            <th scope="col" className="px-1 py-3 hidden lg:table-cell ">
               Median Rent
             </th>
-            <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
+            <th scope="col" className="px-1 py-3 hidden lg:table-cell ">
               Median Home Value
             </th>
-            <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
+            <th scope="col" className="px-1 py-3 hidden lg:table-cell ">
               Crime
             </th>
-            <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
+            <th scope="col" className="px-1 py-3 hidden lg:table-cell ">
               Nightlife
             </th>
-            <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
+            <th scope="col" className="px-1 py-3 hidden lg:table-cell ">
               Weather
             </th>
-            <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
+            <th scope="col" className="px-1 py-3 hidden lg:table-cell ">
               Schools
             </th>
-            <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
+            <th scope="col" className="px-1 py-3 hidden lg:table-cell ">
               Cost of Living
             </th>
-            <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
+            <th scope="col" className="px-1 py-3 hidden lg:table-cell ">
               Outdoors
             </th>
-            <th scope="col" className="px-2 py-3 hidden lg:table-cell ">
+            <th scope="col" className="px-1 py-3 hidden lg:table-cell ">
               Job Market
             </th>
 
-            <th scope="col" className="px-2 py-3 hidden lg:flex ">
+            <th scope="col" className="px-1 py-3 hidden lg:flex ">
               <span className="sr-only ">Compare</span>
             </th>
           </tr>
@@ -125,56 +123,56 @@ export const RankingList = ({
               >
                 <th
                   scope="row"
-                  className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
+                  className="px-1 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
                 >
                   {index}
                 </th>
                 <th
                   scope="row"
-                  className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
+                  className="px-1 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
                 >
                   {city.value}
                 </th>
                 <td
                   scope="row"
-                  className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
+                  className="px-1 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
                 >
                   {city.population}
                 </td>
-                <td className="px-6 py-4 hidden lg:table-cell ">
+                <td className="px-1 py-4 hidden lg:table-cell ">
                   {city.medianRent}
                 </td>
-                <td className="px-6 py-4 hidden lg:table-cell ">
+                <td className="px-1 py-4 hidden lg:table-cell ">
                   {city.medianHomeValue}
                 </td>
-                <td className="px-6 py-4 hidden lg:table-cell ">
+                <td className="px-1 py-4 hidden lg:table-cell ">
                   {city.crimeScore}
                 </td>
-                <td className="px-6 py-4 hidden lg:table-cell ">
+                <td className="px-1 py-4 hidden lg:table-cell ">
                   {city.nightlifeScore}
                 </td>
-                <td className="px-6 py-4 hidden lg:table-cell ">
+                <td className="px-1 py-4 hidden lg:table-cell ">
                   {city.weatherScore}
                 </td>
-                <td className="px-6 py-4 hidden lg:table-cell ">
+                <td className="px-1 py-4 hidden lg:table-cell ">
                   {city.publicSchoolScore}
                 </td>
-                <td className="px-6 py-4 hidden lg:table-cell ">
+                <td className="px-1 py-4 hidden lg:table-cell ">
                   {city.costOfLivingScore}
                 </td>
-                <td className="px-6 py-4 hidden lg:table-cell ">
+                <td className="px-1 py-4 hidden lg:table-cell ">
                   {city.outdoorScore}
                 </td>
-                <td className="px-6 py-4 hidden lg:table-cell ">
+                <td className="px-1 py-4 hidden lg:table-cell ">
                   {city.jobScore}
                 </td>
-                <td className="px-6 py-4 text-right hidden lg:table-cell ">
+                <td className="px-1 py-4 text-right hidden lg:table-cell ">
                   <button
                     id={index}
                     onClick={handleCompareClick}
                     disabled={compareDisabled}
                     type="button"
-                    className="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 disabled:opacity-50"
+                    className="px-1 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 disabled:opacity-50"
                   >
                     Compare
                   </button>
