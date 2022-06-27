@@ -198,33 +198,33 @@ const SearchCard = ({ searchCities, setSearchCities }) => {
         <CityProgressCompareBar
           heading="Yearly Min Temp"
           values={{
-            city1: forecastResults.city1.yearlyMinTemp,
-            city2: forecastResults.city2.yearlyMinTemp,
+            city1: forecastResults?.city1?.yearlyMinTemp,
+            city2: forecastResults?.city2?.yearlyMinTemp,
           }}
         />
         <CityProgressCompareBar
           heading="Yearly Max Temp"
           values={{
-            city1: forecastResults.city1.yearlyMaxTemp / 1.2,
-            city2: forecastResults.city2.yearlyMaxTemp / 1.2,
+            city1: forecastResults?.city1?.yearlyMaxTemp / 1.2,
+            city2: forecastResults?.city2?.yearlyMaxTemp / 1.2,
           }}
           labels={{
-            city1: forecastResults.city1.yearlyMaxTemp,
-            city2: forecastResults.city2.yearlyMaxTemp,
+            city1: forecastResults?.city1?.yearlyMaxTemp,
+            city2: forecastResults?.city2?.yearlyMaxTemp,
           }}
         />
         <CityProgressCompareBar
           heading="Days of Rain"
           values={{
-            city1: forecastResults.city1.rainDays,
-            city2: forecastResults.city2.rainDays,
+            city1: forecastResults?.city1?.rainDays,
+            city2: forecastResults?.city2?.rainDays,
           }}
         />
         <CityProgressCompareBar
           heading="Days of Snow"
           values={{
-            city1: forecastResults.city1.snowDays,
-            city2: forecastResults.city2.snowDays,
+            city1: forecastResults?.city1?.snowDays,
+            city2: forecastResults?.city2?.snowDays,
           }}
         />
       </div>
