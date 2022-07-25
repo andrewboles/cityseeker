@@ -4,6 +4,9 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily:{
+      'display': ['Plus Jakarta Sans'],
+    },
     extend: {
       colors: {
         'eggwhite': '#e6dfcd',

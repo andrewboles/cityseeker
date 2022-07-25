@@ -229,6 +229,11 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@fontsource/plus-jakarta-sans@^4.5.8":
+  version "4.5.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/plus-jakarta-sans/-/plus-jakarta-sans-4.5.8.tgz#8ad38f95953a8a8b23a68c4532a856779f1c8e0f"
+  integrity sha512-rkNIWw6q9M3cVpMxIN85IMG/MxePHl7dTSEvr6xngjvvc8FPudZpJF8R7OsFAGhxdOKXZnO3kFnqXni4Jd5Nog==
+
 "@formkit/auto-animate@^1.0.0-beta.1":
   version "1.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/@formkit/auto-animate/-/auto-animate-1.0.0-beta.1.tgz#aec5fd2ea5e499ceb7eb117c7fd1217a7f100748"

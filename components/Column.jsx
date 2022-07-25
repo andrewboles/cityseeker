@@ -2,8 +2,8 @@ import { Droppable, Draggable } from "react-beautiful-dnd";
 
 export const Column = ({ column, preferenceItems }) => {
   return (
-    <div className="flex flex-col">
-      <h3>{column.title}</h3>
+    <div className="flex flex-col items-center">
+      <h3 className=" font-display font-semibold">{column.title}</h3>
       <div className="flex flex-col">
         <Droppable droppableId={column.id}>
           {(providedParent, snapshotParent) => (
@@ -15,10 +15,9 @@ export const Column = ({ column, preferenceItems }) => {
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
                       ref={provided.innerRef}
-                      className={snapshot.isDragging?"rounded-md border-2 p-2 bg-slate-300": "rounded-md border-2 p-2 bg-white"}
-                      
+                      className={snapshot.isDragging ? "rounded-md border-2 p-2 bg-slate-300" : "rounded-md border-2 p-2 bg-white"}
                     >
-                      <h3>{item.content}</h3>
+                      <h3 className=" font-display">{item.content}</h3>
                     </div>
                   )}
                 </Draggable>

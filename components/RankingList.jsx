@@ -72,40 +72,40 @@ export const RankingList = ({
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-center text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 sticky top-0 z-10">
           <tr>
-            <th scope="col" className="px-1 py-3">
+            <th scope="col" className="px-1 py-3 font-display font-bold">
               Rank
             </th>
-            <th scope="col" className="px-1 py-3">
+            <th scope="col" className="px-1 py-3 font-display font-bold">
               City
             </th>
-            <th scope="col" className="px-1 py-3">
+            <th scope="col" className="px-1 py-3 font-display font-bold">
               Population
             </th>
-            <th scope="col" className="px-1 py-3 hidden lg:table-cell ">
+            <th scope="col" className="px-1 py-3 hidden lg:table-cell font-display font-bold">
               Median Rent
             </th>
-            <th scope="col" className="px-1 py-3 hidden lg:table-cell ">
+            <th scope="col" className="px-1 py-3 hidden lg:table-cell font-display font-bold ">
               Median Home Value
             </th>
-            <th scope="col" className="px-1 py-3 hidden lg:table-cell ">
+            <th scope="col" className="px-1 py-3 hidden lg:table-cell font-display font-bold ">
               Crime
             </th>
-            <th scope="col" className="px-1 py-3 hidden lg:table-cell ">
+            <th scope="col" className="px-1 py-3 hidden lg:table-cell font-display font-bold ">
               Nightlife
             </th>
-            <th scope="col" className="px-1 py-3 hidden lg:table-cell ">
+            <th scope="col" className="px-1 py-3 hidden lg:table-cell font-display font-bold ">
               Weather
             </th>
-            <th scope="col" className="px-1 py-3 hidden lg:table-cell ">
+            <th scope="col" className="px-1 py-3 hidden lg:table-cell font-display font-bold ">
               Schools
             </th>
-            <th scope="col" className="px-1 py-3 hidden lg:table-cell ">
+            <th scope="col" className="px-1 py-3 hidden lg:table-cell font-display font-bold ">
               Cost of Living
             </th>
-            <th scope="col" className="px-1 py-3 hidden lg:table-cell ">
+            <th scope="col" className="px-1 py-3 hidden lg:table-cell font-display font-bold ">
               Outdoors
             </th>
-            <th scope="col" className="px-1 py-3 hidden lg:table-cell ">
+            <th scope="col" className="px-1 py-3 hidden lg:table-cell font-display font-bold ">
               Job Market
             </th>
 
@@ -123,47 +123,47 @@ export const RankingList = ({
               >
                 <th
                   scope="row"
-                  className="px-1 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
+                  className="px-1 py-4 font-display font-bold text-gray-900 dark:text-white whitespace-nowrap"
                 >
                   {index}
                 </th>
                 <th
                   scope="row"
-                  className="px-1 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
+                  className="px-1 py-4 font-display font-semibold text-gray-900 dark:text-white whitespace-nowrap"
                 >
                   {city.value}
                 </th>
                 <td
                   scope="row"
-                  className="px-1 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
+                  className="px-1 py-4 font-display  font-medium text-gray-900 dark:text-white whitespace-nowrap"
                 >
                   {city.population}
                 </td>
-                <td className="px-1 py-4 hidden lg:table-cell ">
+                <td className="px-1 py-4 font-display  hidden lg:table-cell ">
                   {city.medianRent}
                 </td>
-                <td className="px-1 py-4 hidden lg:table-cell ">
+                <td className="px-1 py-4 font-display  hidden lg:table-cell ">
                   {city.medianHomeValue}
                 </td>
-                <td className="px-1 py-4 hidden lg:table-cell ">
+                <td className="px-1 py-4 font-display  hidden lg:table-cell ">
                   {city.crimeScore}
                 </td>
-                <td className="px-1 py-4 hidden lg:table-cell ">
+                <td className="px-1 py-4 font-display  hidden lg:table-cell ">
                   {city.nightlifeScore}
                 </td>
-                <td className="px-1 py-4 hidden lg:table-cell ">
+                <td className="px-1 py-4 font-display hidden lg:table-cell ">
                   {city.weatherScore}
                 </td>
-                <td className="px-1 py-4 hidden lg:table-cell ">
+                <td className="px-1 py-4 font-display  hidden lg:table-cell ">
                   {city.publicSchoolScore}
                 </td>
-                <td className="px-1 py-4 hidden lg:table-cell ">
+                <td className="px-1 py-4 hidden font-display  lg:table-cell ">
                   {city.costOfLivingScore}
                 </td>
-                <td className="px-1 py-4 hidden lg:table-cell ">
+                <td className="px-1 py-4 hidden  font-display lg:table-cell ">
                   {city.outdoorScore}
                 </td>
-                <td className="px-1 py-4 hidden lg:table-cell ">
+                <td className="px-1 py-4 hidden font-display  lg:table-cell ">
                   {city.jobScore}
                 </td>
                 <td className="px-1 py-4 text-right hidden lg:table-cell ">
@@ -172,7 +172,7 @@ export const RankingList = ({
                     onClick={handleCompareClick}
                     disabled={compareDisabled}
                     type="button"
-                    className="px-1 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 disabled:opacity-50"
+                    className="px-1 py-2 text-xs  font-display font-semibold text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 disabled:opacity-50"
                   >
                     Compare
                   </button>
