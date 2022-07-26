@@ -76,9 +76,9 @@ export default function Home() {
   }, [searchCities]);
 
   return (
-    <div className="flex h-screen w-screen">
+    <div className="flex h-screen w-screen bg-offwhite">
       <div className="flex flex-col justify-around items-center md:w-1/3 lg:w-1/4">
-        <h2>cityseeker</h2>
+        <h2 className="mt-4 font-logo text-3xl text-midnight">cityseeker</h2>
         <SliderSet {...{ preferences, setPreferences }} />
         <DragDrop {...{ prefColumnOrder, setPrefColumnOrder, setPreferences }} />
       </div>
@@ -130,13 +130,13 @@ const SearchCard = ({ searchCities, setSearchCities }) => {
     <div className="flex flex-row justify-center items-center shadow-md p-2">
       <div className="flex flex-col w-1/2">
         <div className="flex w-full justify-around">
-          <div className="flex align-center">
-            <h2 className="bg-lime rounded-md p-1">
+          <div className="flex items-center mb-2">
+            <h2 className=" bg-paleblue font-display font-semibold rounded-xl p-2 px-3">
               {searchCities.city1.value}
             </h2>
             {searchCities.city1 !== "" && (
               <button
-                className="ml-2 p-1 text-ash text-sm bg-cobalt border-2 rounded-md"
+                className="ml-2 w-6 h-6 text-ash text-sm bg-cobalt border-2 rounded-md"
                 onClick={handleRemoveClick}
                 id="city1"
               >
@@ -144,13 +144,13 @@ const SearchCard = ({ searchCities, setSearchCities }) => {
               </button>
             )}
           </div>
-          <div className="flex align-center">
-            <h2 className="bg-pink rounded-md p-1">
+          <div className="flex items-center mb-2">
+            <h2 className=" bg-peach font-display font-semibold  rounded-xl p-2 px-3">
               {searchCities.city2.value}
             </h2>
             {searchCities.city2 !== "" && (
               <button
-                className="ml-2 p-1 text-ash text-sm bg-cobalt border-2 rounded-md"
+                className="ml-2 w-6 h-6 text-ash text-sm bg-cobalt border-2 rounded-md"
                 onClick={handleRemoveClick}
                 id="city2"
               >

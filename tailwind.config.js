@@ -5,17 +5,17 @@ module.exports = {
   ],
   theme: {
     fontFamily:{
-      'display': ['Plus Jakarta Sans'],
+      'display': ['Amiko'],
+      'logo': ['Righteous']
     },
     extend: {
       colors: {
-        'eggwhite': '#e6dfcd',
-        'cobalt': '#35498b',
-        'stone-blue': '#23292f',
-        'ash': '#e0e1da',
-        'moss': '#8A8936',
-        'lime': '#82C91E',
-        'pink': '#E64980'
+        'midnight': '#112f4c',
+        'peach': '#fd9676',
+        'paleblue': '#1595b1',
+        "gray": "#e1e6ea",
+        "offwhite": "#FCFDFD",
+        "darkdefault": "#2D2E2F"
       }
     },
   },

@@ -229,10 +229,15 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@fontsource/plus-jakarta-sans@^4.5.8":
+"@fontsource/amiko@^4.5.8":
   version "4.5.8"
-  resolved "https://registry.yarnpkg.com/@fontsource/plus-jakarta-sans/-/plus-jakarta-sans-4.5.8.tgz#8ad38f95953a8a8b23a68c4532a856779f1c8e0f"
-  integrity sha512-rkNIWw6q9M3cVpMxIN85IMG/MxePHl7dTSEvr6xngjvvc8FPudZpJF8R7OsFAGhxdOKXZnO3kFnqXni4Jd5Nog==
+  resolved "https://registry.yarnpkg.com/@fontsource/amiko/-/amiko-4.5.8.tgz#3548903336090719bb8f4655d9ce88c2a89d8877"
+  integrity sha512-Bk9kBW82o/fK+JAbhO621lwe4G9IGw27bUCESyRg7B3s7DHIv9LXK80IUiEMP4K0ULzhwtJy6ATlSe+CF1/q2w==
+
+"@fontsource/righteous@^4.5.6":
+  version "4.5.6"
+  resolved "https://registry.yarnpkg.com/@fontsource/righteous/-/righteous-4.5.6.tgz#af5bc0b842d273bcfbfdbe6c5258e87d4b3a1090"
+  integrity sha512-apnLtxjtpSIHMGY7XBjsb3qlmjhmnM7BnvxNrMfBeCrfmpceDsvemhesze/VLqpbN14cQ+IjfgvWfj2sEKS8XA==
 
 "@formkit/auto-animate@^1.0.0-beta.1":
   version "1.0.0-beta.1"

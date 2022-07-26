@@ -17,6 +17,7 @@ export default function PreferenceSlider({ categoryHeading, category, MARKS, set
           marks={MARKS}
           min={min}
           max={max}
+          color="pink"
         />
         : <RangeSlider
           size="sm"
@@ -31,6 +32,7 @@ export default function PreferenceSlider({ categoryHeading, category, MARKS, set
           marks={MARKS}
           min={min}
           max={max}
+          color="cyan"
         />
       }
     </div>
