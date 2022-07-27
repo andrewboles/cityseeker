@@ -6,6 +6,7 @@ import { initialData } from "../lib/initialDragData";
 import { DragDrop } from "../components/DragDrop";
 import { RankingList } from "../components/RankingList";
 import { resetServerContext } from "react-beautiful-dnd";
+import {IntroModal} from '../components/IntroModal'
 
 export const getServerSideProps = async ({ query }) => {
   resetServerContext();
@@ -46,10 +47,18 @@ cityKeys.map((city) => {
   });
 });
 
-export default function Home() {
+export default function Home() {  
   const [compareDisabled, setCompareDisabled] = useState(false);
   const [searchCities, setSearchCities] = useState({ city1: "", city2: "" });
   const [prefColumnOrder, setPrefColumnOrder] = useState(initialData);
+
+  const [introSeen, setIntroSeen] = useState()
+ useEffect( ()=>{
+  if (typeof window !== 'undefined') {
+    setIntroSeen(localStorage.getItem('introseen') ?? null)
+  }
+ },[])
+  
   const [preferences, setPreferences] = useState({
     population: [250000, 2000000],
     medianHomeValue: [200000, 1000000],
@@ -76,11 +85,14 @@ export default function Home() {
   }, [searchCities]);
 
   return (
-    <div className="flex h-screen w-screen bg-offwhite">
-      <div className="flex flex-col justify-around items-center md:w-1/3 lg:w-1/4">
-        <h2 className="mt-4 font-logo text-3xl text-midnight">cityseeker</h2>
+    <>
+    { !introSeen ? <IntroModal setIntroSeen={setIntroSeen}/> : <div className="flex h-screen w-screen bg-offwhite">
+      <div className="flex flex-col  justify-around items-center md:w-1/3 lg:w-1/4">
+        <h2 className="mt-6 font-logo text-3xl text-midnight">cityseeker</h2>
         <SliderSet {...{ preferences, setPreferences }} />
-        <DragDrop {...{ prefColumnOrder, setPrefColumnOrder, setPreferences }} />
+        <DragDrop
+          {...{ prefColumnOrder, setPrefColumnOrder, setPreferences }}
+        />
       </div>
       <div className="flex flex-col md:w-2/3 lg:w-3/4">
         <RankingList
@@ -94,7 +106,8 @@ export default function Home() {
         />
         <SearchCard {...{ setSearchCities, searchCities }} />
       </div>
-    </div>
+    </div>}
+    </>
   );
 }
 
@@ -131,31 +144,35 @@ const SearchCard = ({ searchCities, setSearchCities }) => {
       <div className="flex flex-col w-1/2">
         <div className="flex w-full justify-around">
           <div className="flex items-center mb-2">
-            <h2 className=" bg-paleblue font-display font-semibold rounded-xl p-2 px-3">
-              {searchCities.city1.value}
-            </h2>
             {searchCities.city1 !== "" && (
-              <button
-                className="ml-2 w-6 h-6 text-ash text-sm bg-cobalt border-2 rounded-md"
-                onClick={handleRemoveClick}
-                id="city1"
-              >
-                X
-              </button>
+              <>
+                <h2 className=" bg-paleblue font-display font-semibold rounded-xl p-2 px-3">
+                  {searchCities.city1.value}
+                </h2>
+                <button
+                  className="ml-2 w-6 h-6 text-ash text-sm bg-cobalt border-2 rounded-md"
+                  onClick={handleRemoveClick}
+                  id="city1"
+                >
+                  X
+                </button>
+              </>
             )}
           </div>
           <div className="flex items-center mb-2">
-            <h2 className=" bg-peach font-display font-semibold  rounded-xl p-2 px-3">
-              {searchCities.city2.value}
-            </h2>
             {searchCities.city2 !== "" && (
-              <button
-                className="ml-2 w-6 h-6 text-ash text-sm bg-cobalt border-2 rounded-md"
-                onClick={handleRemoveClick}
-                id="city2"
-              >
-                X
-              </button>
+              <>
+                <h2 className=" bg-peach font-display font-semibold  rounded-xl p-2 px-3">
+                  {searchCities.city2.value}
+                </h2>
+                <button
+                  className="ml-2 w-6 h-6 text-ash text-sm bg-cobalt border-2 rounded-md"
+                  onClick={handleRemoveClick}
+                  id="city2"
+                >
+                  X
+                </button>
+              </>
             )}
           </div>
         </div>
@@ -267,7 +284,7 @@ const SliderSet = ({ preferences, setPreferences }) => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center p-5 m-2">
+    <div className="flex flex-col items-center justify-center px-5 py-1 m-1">
       <PreferenceSlider
         min={100000}
         max={2500000}
