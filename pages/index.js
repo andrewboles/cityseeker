@@ -8,7 +8,7 @@ import { RankingList } from "../components/RankingList";
 import { resetServerContext } from "react-beautiful-dnd";
 import { IntroModal } from "../components/IntroModal";
 
-//Just for general background, this is a true single page application, as in, it has one route.
+//Just for general background, this is a single-route application
 //Most of the more complex components are purposefully left in this file so it's easier to walk through
 
 export const getServerSideProps = async () => {
