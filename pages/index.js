@@ -6,18 +6,24 @@ import { initialData } from "../lib/initialDragData";
 import { DragDrop } from "../components/DragDrop";
 import { RankingList } from "../components/RankingList";
 import { resetServerContext } from "react-beautiful-dnd";
-import {IntroModal} from '../components/IntroModal'
+import { IntroModal } from "../components/IntroModal";
 
-export const getServerSideProps = async ({ query }) => {
+//Just for general background, this is a true single page application, as in, it has one route.
+//Most of the more complex components are purposefully left in this file so it's easier to walk through
+
+export const getServerSideProps = async () => {
+  //This reset server context has to do with "unsticking" the state of React Beautiful Drag and Drop
   resetServerContext();
-
   return { props: { data: [] } };
 };
+
+//This is consolidating API data into a usable array
 const citiesData = require("../citydataacquire/results");
 let citiesList = [];
 const cityKeys = Object.keys(citiesData);
 
 cityKeys.map((city) => {
+  console.log("remapping cities")
   citiesList.push({
     value: city,
     label: city,
@@ -47,18 +53,20 @@ cityKeys.map((city) => {
   });
 });
 
-export default function Home() {  
+export default function Home() {
   const [compareDisabled, setCompareDisabled] = useState(false);
   const [searchCities, setSearchCities] = useState({ city1: "", city2: "" });
   const [prefColumnOrder, setPrefColumnOrder] = useState(initialData);
+  const [introSeen, setIntroSeen] = useState();
 
-  const [introSeen, setIntroSeen] = useState()
- useEffect( ()=>{
-  if (typeof window !== 'undefined') {
-    setIntroSeen(localStorage.getItem('introseen') ?? null)
-  }
- },[])
-  
+  //This makes sure the intro modal is seen only once
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIntroSeen(localStorage.getItem("introseen") ?? null);
+    }
+  }, []);
+
+  //initial values for preferences
   const [preferences, setPreferences] = useState({
     population: [250000, 2000000],
     medianHomeValue: [200000, 1000000],
@@ -86,27 +94,34 @@ export default function Home() {
 
   return (
     <>
-    { !introSeen ? <IntroModal setIntroSeen={setIntroSeen}/> : <div className="flex h-screen w-screen bg-offwhite">
-      <div className="flex flex-col  justify-around items-center md:w-1/3 lg:w-1/4">
-        <h2 className="mt-6 font-logo text-3xl text-midnight">cityseeker</h2>
-        <SliderSet {...{ preferences, setPreferences }} />
-        <DragDrop
-          {...{ prefColumnOrder, setPrefColumnOrder, setPreferences }}
-        />
-      </div>
-      <div className="flex flex-col md:w-2/3 lg:w-3/4">
-        <RankingList
-          {...{
-            preferences,
-            compareDisabled,
-            setSearchCities,
-            searchCities,
-            citiesList,
-          }}
-        />
-        <SearchCard {...{ setSearchCities, searchCities }} />
-      </div>
-    </div>}
+      {/*Checks if you've seen the intro video*/}
+      {!introSeen ? (
+        <IntroModal setIntroSeen={setIntroSeen} />
+      ) : (
+        <div className="flex h-screen w-screen bg-offwhite">
+          <div className="flex flex-col  justify-around items-center md:w-1/3 lg:w-1/4">
+            <h2 className="mt-6 font-logo text-3xl text-midnight">
+              cityseeker
+            </h2>
+            <SliderSet {...{ preferences, setPreferences }} />
+            <DragDrop
+              {...{ prefColumnOrder, setPrefColumnOrder, setPreferences }}
+            />
+          </div>
+          <div className="flex flex-col md:w-2/3 lg:w-3/4">
+            <RankingList
+              {...{
+                preferences,
+                compareDisabled,
+                setSearchCities,
+                searchCities,
+                citiesList,
+              }}
+            />
+            <SearchCard {...{ setSearchCities, searchCities }} />
+          </div>
+        </div>
+      )}
     </>
   );
 }
