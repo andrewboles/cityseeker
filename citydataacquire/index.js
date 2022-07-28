@@ -19,7 +19,7 @@ const collectData = async () => {
 
 
 const getCityDetails = async cityQuery => {
-  console.log("city query", cityQuery.split(',')[0])
+  .log("city query", cityQuery.split(',')[0])
   await new Promise(resolve => {
     setTimeout(() => {
       axios.get('https://find-places-to-live.p.rapidapi.com/location', {
@@ -30,7 +30,6 @@ const getCityDetails = async cityQuery => {
         }
       }).then(response => {
         let cityCode = null;
-        console.log(response.data);
         let i = 0
         do{
           if (response.data[i].type === "Town") {
@@ -70,7 +69,6 @@ const getCityDetails = async cityQuery => {
 }
 
 collectData().then(nada => {
-  console.log("WRITING DATA")
   let data = JSON.stringify(completeCityResults, null, 2);
   fs.writeFileSync('results2.json', data);
 })

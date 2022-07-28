@@ -23,7 +23,6 @@ let citiesList = [];
 const cityKeys = Object.keys(citiesData);
 
 cityKeys.map((city) => {
-  console.log("remapping cities")
   citiesList.push({
     value: city,
     label: city,
@@ -135,7 +134,6 @@ const SearchCard = ({ searchCities, setSearchCities }) => {
   useEffect(() => {
     if (searchCities.city1 !== "") {
       fetchForecast(searchCities.city1.value).then((values) => {
-        console.log(values);
         setForecastResults({ ...forecastResults, city1: values });
       });
     }
@@ -143,7 +141,6 @@ const SearchCard = ({ searchCities, setSearchCities }) => {
   useEffect(() => {
     if (searchCities.city2 !== "") {
       fetchForecast(searchCities.city2.value).then((values) => {
-        console.log(values);
         setForecastResults({ ...forecastResults, city2: values });
       });
     }

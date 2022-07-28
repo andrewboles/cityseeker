@@ -32,7 +32,6 @@ export const DragDrop = ({
         },
       };
     });
-    console.log(newColumn.preferenceIds.indexOf("crime"));
     setPreferences((current) => {
       return {
         ...current,
